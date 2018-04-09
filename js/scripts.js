@@ -17,21 +17,19 @@ $(document).ready(function(){
     });
     $("#special").click(function() {
       enemy.special();
-      console.log(enemy);
       $("#special").hide();
       player.special = 0;
     });
     $(".titleCard").slideUp();
     $(".adventureTime").slideDown();
+    var indexOne = 0;
+    $(".nextText").click(function(event){
+      event.preventDefault();
+      indexOne+=1
+      $(".textHere").text(roomOneNarr[indexOne]);
+      if(indexOne === 3){
+        $(".choiceOne").show();
+      }
+    })
   });
-  var indexOne = 0;
-  $(".nextText").click(function(event){
-    event.preventDefault();
-    indexOne+=1
-    $(".textHere").text(roomOneNarr[indexOne]);
-    // if(indexOne === 3){
-    //   $()
-    }
-  })
-
 });
