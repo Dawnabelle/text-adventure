@@ -31,7 +31,5 @@ $(document).ready(function(){
     $(".textHere").text(roomOneNarr[indexOne]);
     // if(indexOne === 3){
     //   $()
-    }
   })
-
-});
+  })
