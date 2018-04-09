@@ -16,32 +16,44 @@ function Enemy() {
 //COMBAT PROTOTYPES
   // user attack
 User.prototype.enemyAttack = function () {
+  this.special += 10;
   return this.hp -= Math.floor(Math.random() * (9-5) + 5);
 };
 
 Enemy.prototype.userAttack = function () {
-  user.special += 10;
   return this.hp -= Math.floor(Math.random() * (11-5) + 5);
 };
 
 Enemy.prototype.special = function () {
+
   return this.hp -= 20;
 };
 
 
 // USER INTERFACE
+
 $(function() {
   $("#start").submit(function(event) {
+    var inputName = $("#name").val();
+    var player = new User(inputName);
+    var enemy = new Enemy();
     event.preventDefault();
-  var inputName = $("#name").val();
-  var user = new User(inputName);
-  var enemy = new Enemy();
-  });
-  $("#attack").click(function() {
-    enemy.userAttack();
-    user.enemyAttack();
-  });
-  $("#special").click(function() {
-    enemy.special();
+    console.log(player);
+      $("#attack").click(function() {
+        enemy.userAttack();
+        player.enemyAttack();
+        console.log(player);
+        console.log(enemy);
+        if (player.special >= 30) {
+          $("#special").show();
+
+        }
+      });
+      $("#special").click(function() {
+        enemy.special();
+        console.log(enemy);
+        $("#special").hide();
+        player.special = 0;
+      });
   });
 });
