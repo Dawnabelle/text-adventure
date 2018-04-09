@@ -17,19 +17,23 @@
         <h1>Cavern</h1>
         <h2> A Text-Based Adventure</h2>
         <h4>A team project by Bobby Martin, Garnett Puett, Isaac Shoman, Ami Cooper, and Dawn Mott</h4>
-        <button type="button" id="goToRoomOne">Enter the cavern!</button>
+        <form id="start">
+          <div class="form-group">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Enter</button>
+        </form>
       </div>
-      <p class="adventureTime hiden"> <span id="room-one"> </span> </p>
-      <div class="adventureTime hidden">
-        <button type="button" class=
-        "nextText"> >>> </button>
-      <form id="start">
-        <div class="form-group">
-          <label for="name">Enter your name:</label>
-          <input type="text" id="name" class="form-control">
+      <div class="adventureTime hiddenDiv">
+        <p class="textHere">You enter a small cavern.</p>
+        <button type="button" class="nextText btn btn-primary"> >>> </button>
+        <div class="choiceOne hidden">
+          <button type="button" class="btn btn-primary" id="leftOne">Go left</button>
+          <button type="button" class="btn btn-primary" id="rightOne">Go right</button>
+          <button type="button" class="nextText1 btn btn-primary"> >>> </button>
         </div>
-        <button type="submit" class="btn btn-primary">Enter</button>
-      </form>
+      </div>
     </div>
   </body>
 </html>
