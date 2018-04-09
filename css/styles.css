@@ -1,0 +1,63 @@
+#special {
+  display: none;
+}
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(#000 0%, #222 100%);
+
+}
+h1{
+  font-family: "Poiret One", sans-serif;
+  text-align: center;
+  color: #F8F8FF;
+  font-size: 100px;
+}
+h2{
+  font-family: "Poiret One", sans-serif;
+  text-align: center;
+  color: #F8F8FF;
+}
+h4{
+  font-family: "Poiret One", sans-serif;
+  text-align: center;
+  color: #F8F8FF;
+}
+p {
+  font-family: "Press Start 2P", sans-serif;
+  color: #F8F8FF;
+}
+.titleCard{
+  padding: 50px;
+}
+.hidden{
+  display: none;
+  padding: 50px;
+}
+.adventureTime{
+  color: #F8F8FF;
+}
+.container{
+  background-color: black;
+  max-width: 80%;
+  margin: auto;
+  height: 500px;
+}
+.titleCard{
+  padding: 50px;
+}
+.hidden{
+  display: none;
+  padding: 50px;
+}
+button{
+  margin-right: 50%;
+  margin-left: 50%;
+}
+label{
+  color: #F8F8FF;
+}
