@@ -9,7 +9,7 @@ html {
 body {
   height: 100vh;
   background: linear-gradient(#000 0%, #222 100%);
-
+  color: white;
 }
 h1{
   font-family: "Poiret One", sans-serif;
@@ -52,6 +52,10 @@ p {
 .hiddenDiv{
   display: none;
   padding: 50px;
+}
+#classSelect {
+  background-color: transparent;
+  border: 0;
 }
 button{
   margin-right: 50%;
