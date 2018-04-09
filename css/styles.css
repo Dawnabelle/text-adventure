@@ -36,7 +36,6 @@ p {
 }
 .hidden{
   display: none;
-  padding: 50px;
 }
 .adventureTime{
   color: #F8F8FF;
@@ -50,7 +49,7 @@ p {
 .titleCard{
   padding: 50px;
 }
-.hidden{
+.hiddenDiv{
   display: none;
   padding: 50px;
 }

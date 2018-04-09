@@ -1,17 +1,13 @@
 //backend & globals
 var roomOneNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
-function User() {
-  this.name = name;
-  this.hp = 100;
-  this.special = 0;
-}
+var roomLeftOne = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
-    event.preventDefault();
     var inputName = $("#name").val();
     var player = new User(inputName);
     var enemy = new Enemy();
+    event.preventDefault();
     $("#attack").click(function() {
       enemy.userAttack();
       player.enemyAttack();
@@ -33,7 +29,18 @@ $(document).ready(function(){
     event.preventDefault();
     indexOne+=1
     $(".textHere").text(roomOneNarr[indexOne]);
-    // if(indexOne === 3){
-    //   $()
+    if(indexOne === 3){
+      $(".choiceOne").slideDown();
+      $(".nextText").slideUp();
+    }
   })
+//Go left
+  var indexTwo = 0;
+  $("#leftOne").click(function(event){
+    event.preventDefault();
+    $(".nextText1").show();
+    $("#rightOne").hide();
+    $("#leftOne").hide();
+    $(".textHere").text("The path on your left leads towards a small hole, just big enough to crawl through.")
   })
+})
