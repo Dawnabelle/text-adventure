@@ -16,3 +16,5 @@ damageDialogue.prototype.damage = function () {
   var damage = "You took damage";
   this.damage.push(damage);
 };
+//Text
+var roomOneNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
