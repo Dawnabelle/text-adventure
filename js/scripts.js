@@ -1,6 +1,6 @@
 //backend & globals
-var roomOneNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
-var roomLeftOne = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
+var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
+var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
@@ -22,25 +22,43 @@ $(document).ready(function(){
       player.special = 0;
     });
     $(".titleCard").slideUp();
-    $(".adventureTime").slideDown();
+    $(".roomStart").slideDown();
   });
-  var indexOne = 0;
-  $(".nextText").click(function(event){
+//start room
+var indexStart = 0;
+  $(".nextStart").click(function(event){
     event.preventDefault();
-    indexOne+=1
-    $(".textHere").text(roomOneNarr[indexOne]);
-    if(indexOne === 3){
-      $(".choiceOne").slideDown();
-      $(".nextText").slideUp();
+    indexStart +=1;
+    $("#textStart").text(roomStartNarr[indexStart]);
+    if(indexStart === 3){
+      $(".roomStart").hide();
+      $(".choiceStart").show();
     }
+  });
+//make sure next buttons are in the last line of the arrays
+//Go left choice
+  $("#leftStart").click(function(event){
+    $(".choiceStart").hide();
+    $(".roomOne").show();
   })
-//Go left
-  var indexTwo = 0;
-  $("#leftOne").click(function(event){
-    event.preventDefault();
-    $(".nextText1").show();
-    $("#rightOne").hide();
-    $("#leftOne").hide();
-    $(".textHere").text("The path on your left leads towards a small hole, just big enough to crawl through.")
-  })
-})
+//room one
+var indexOne = 0;
+$(".nextOne").click(function(event){
+  event.preventDefault();
+  indexOne +=1;
+  $("#textOne").text(roomOneNarr[indexOne]);
+  if(indexStart === 3){
+    $(".roomOne").hide();
+    $(".choiceStart").show();
+  }
+});
+
+//   $(".nextTextTwo").click(function(event){
+//     event.preventDefault();
+//     indexTwo +=1;
+//     $(".textHere1").text(roomLeftOne[indexTwo])
+//     if(indexTwo ===2){
+//
+//     }
+//   });
+});
