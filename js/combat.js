@@ -14,6 +14,8 @@ var roll = function() {
 }
 
 // ATTACK AND DAMAGE PROTOTYPES
+
+//Damage that Enemy does to User
 User.prototype.enemyAttack = function () {
   var combatRoll = roll();
   console.log(combatRoll, "this is the user combatRoll");
@@ -29,7 +31,7 @@ User.prototype.enemyAttack = function () {
     return this.hp -= Math.floor(Math.random() * (9-5) + 5);
   }
 };
-
+//Damage that User does to Enemy
 Enemy.prototype.userAttack = function () {
   var enemyRoll = roll();
   console.log(enemyRoll, "This is the enemyRoll");
