@@ -30,3 +30,18 @@ Enemy.prototype.special = function () {
 
 
 // USER INTERFACE
+$(function() {
+  $("#start").submit(function(event) {
+    event.preventDefault();
+  var inputName = $("#name").val();
+  var user = new User(inputName);
+  var enemy = new Enemy();
+  });
+  $("#attack").click(function() {
+    enemy.userAttack();
+    user.enemyAttack();
+  });
+  $("#special").click(function() {
+    enemy.special();
+  });
+});
