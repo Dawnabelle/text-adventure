@@ -17,10 +17,10 @@ function Enemy() {
   // user attack
 User.prototype.enemyAttack = function () {
   return this.hp -= Math.floor(Math.random() * (9-5) + 5);
-  this.special += 10;
 };
 
 Enemy.prototype.userAttack = function () {
+  user.special += 10;
   return this.hp -= Math.floor(Math.random() * (11-5) + 5);
 };
 
