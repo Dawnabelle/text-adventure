@@ -1,7 +1,8 @@
 //CHARACTER CONSTRUCTORS
 function User(name) {
   this.name = name;
-  this.hp = 100;
+  this.hp = 0;
+  this.damage = 0;
   this.special = 0;
 }
 function Enemy() {

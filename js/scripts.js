@@ -15,14 +15,6 @@ $(document).ready(function(){
         $("#special").show();
       }
     });
-    var classInput = $("#classSelect").val();
-    if(classInput === "warrior") {
-      var warrior = new Warrior(inputName);
-    } else if (classInput === "wizard") {
-      var wizard = new Wizard(inputName);
-    } else {
-      var thief = new Thief(inputName);
-    };
     $("#special").click(function() {
       enemy.special();
       console.log(enemy);
