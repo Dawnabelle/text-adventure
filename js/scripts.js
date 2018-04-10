@@ -2,6 +2,8 @@
 var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
 var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
 var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you.','Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
+var roomTwoAfterFight = ['','You hit the skeleton with so much force, it cascades boney shards in every direction.', 'You rest a minute and try to collect your feelings.', 'What just happened?', 'The scattered bones move no more.', 'Sensing no other immediate threat, you proceed.']
+var roomThree = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.’, ‘There are no enemies in this room, save the path itself.’, ‘A rickety bridge is in front of you and is the only way across.’, ‘You step out with your right foot and the bridge begins to sway.’, ‘Anxiously, you press on.']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
