@@ -29,7 +29,7 @@ h1{
   color: #F8F8FF;
   font-size: 100px;
   margin-top: 50px;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
 }
 h2{
   font-family: "Poiret One", sans-serif;
@@ -60,13 +60,6 @@ p {
 }
 .hiddenID{
   display: none;
-}
-.container{
-  max-width: 80%;
-  margin: auto;
-  height: 500px;
-  padding-top: 100px;
-  float: left;
 }
 .titleCard{
   padding: 50px;
