@@ -34,7 +34,6 @@ h1{
   color: #F8F8FF;
   font-size: 100px;
   margin-top: 50px;
-  margin-bottom: 200px;
 }
 h2{
   font-family: "Poiret One", sans-serif;
@@ -52,11 +51,7 @@ p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .titleCard{
   padding-right: 15px;
   padding-left: 15px;
@@ -74,6 +69,7 @@ p {
   height: 500px;
   padding-top: 100px;
   float: left;
+  padding-right: 30px;
 }
 .titleCard{
   padding: 50px;
@@ -100,6 +96,7 @@ p {
   align-items: center;
   flex-direction: column;
 }
+
 .form-group {
   width: 100%;
 }

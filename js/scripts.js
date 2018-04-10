@@ -8,6 +8,7 @@ $(document).ready(function(){
     var inputName = $("#name").val();
     var player = new User(inputName);
     var enemy = new Enemy();
+    var classInput = $("#classSelect").val();
     event.preventDefault();
     $("#attack").click(function() {
       enemy.userAttack();
@@ -22,8 +23,8 @@ $(document).ready(function(){
       $("#special").hide();
       player.special = 0;
     });
-    $("#userName").text(inputName)
-    // $("#classTitle").text("Warrior")
+    $("#userName").text(inputName);
+    $("#classTitle").text(classInput);
     // $("#userHP").text("100" + " / " + "100")
     $(".titleCard").slideUp();
     $(".roomStart").slideDown();
