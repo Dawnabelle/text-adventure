@@ -20,8 +20,8 @@ html {
 }
 body {
   height: 100vh;
-  background: linear-gradient(#000 0%, #333 100%);
-
+  background: linear-gradient(#000 0%, #222 100%);
+  color: white;
 }
 h1{
   font-family: "Poiret One", sans-serif;
@@ -45,14 +45,18 @@ p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
 }
-
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .titleCard{
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   padding: 50px;
-  max-width: 80%;
+  width: 100%;
 }
 .hiddenID{
   display: none;
@@ -71,6 +75,26 @@ p {
   display: none;
   padding: 50px;
   margin: 50px;
+}
+.form-control {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.form-control:focus {
+  background: transparent;
+  box-shadow: none;
+}
+#start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-group {
+  width: 100%;
 }
 button{
   margin-right: 50%;

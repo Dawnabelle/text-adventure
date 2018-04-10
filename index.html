@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/combat.js"></script>
+    <script src="js/classes.js"></script>
     <script src="js/rooms.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
@@ -25,13 +26,34 @@
       </form>
     </div>
     <div class="container">
+      <div class="titleCard">
+        <h1>Cavern</h1>
+        <!-- <h2> A Text-Based Adventure</h2> -->
+        <!-- <h4>A team project by Bobby Martin, Garnett Puett, Isaac Shoman, Ami Cooper, and Dawn Mott</h4> -->
+        <form id="start">
+          <div class="form-group row">
+            <div class="col mr-3">
+              <input type="text" id="name" class="form-control" placeholder="Enter your name:">
+            </div>
+            <div class="col">
+              <!-- <input type="text" id="classSelect" class="form-control" placeholder="Enter your class: Warrior, Wizard, or Thief"> -->
+              <select class="form-control" id="classSelect">
+                <option>Select a class:</option>
+                <option value="warrior">Warrior</option>
+                <option value="wizard">Wizard</option>
+                <option value="thief">Thief</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Enter</button>
+        </form>
       <div class="hiddenDiv userStats">
         <p>Player: <span id="userName"></p>
         <p>Class: <span id="classTitle"></p>
         <p>HP: <span id="userHP"></p>
       </div>
       <div class="roomStart hiddenDiv">
-        <p id=textStart>You enter a small cavern.</p>
+        <p id="textStart">You enter a small cavern.</p>
         <button type="button" class="nextStart btn btn-primary"> >>> </button>
       </div>
       <div class="choiceStart hiddenDiv">
