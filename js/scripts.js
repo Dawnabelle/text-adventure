@@ -8,8 +8,8 @@ var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You loo
 var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
 var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you.','Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
 var roomTwoAfterFight = ['', 'You rest a minute and try to collect your feelings.', 'What just happened?', 'The scattered bones move no more.', 'Sensing no other immediate threat, you proceed.']
-var roomThree = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.’, ‘There are no enemies in this room, save the path itself.’, ‘A rickety bridge is in front of you and is the only way across.’, ‘You step out with your right foot and the bridge begins to sway.’, ‘Anxiously, you press on.']
-var roomFour = ['As you make your way further along, the smell reaches you before your eyes connect with the source.','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Do you stay and fight?']
+var roomThreeNarr = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.', 'There are no enemies in this room, save the path itself.', 'A rickety bridge is in front of you and is the only way across.', 'You step out with your right foot and the bridge begins to sway.', 'Anxiously, you press on.']
+var roomFourNarr = ['As you make your way further along, the smell reaches you before your eyes connect with the source.','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Do you stay and fight?']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
@@ -116,7 +116,7 @@ $(document).ready(function(){
     $(".choiceStart").hide();
     $(".roomTwo").show();
   });
-  // room two
+  // room two (combat Room)
   var indexTwo = 0;
   $(".nextTwo").click(function(event) {
     indexTwo +=1;
@@ -127,14 +127,30 @@ $(document).ready(function(){
     $(".combat-text").hide();
     }
   });
+  //after fight before room 3
   var indexAfterTwoFight = 0;
   $(".afterFight").click(function(event) {
     $(".combat-text").hide();
     indexAfterTwoFight +=1;
     $("#afterFightText").text(roomTwoAfterFight[indexAfterTwoFight]);
-    if (indexAfterTwoFight === 3) {
+    if (indexAfterTwoFight === 4) {
       $(".afterFight").hide();
       $(".roomThree").show();
+      $(".nextThree").show()
     }
   });
+  //room three
+  var indexThree = 0;
+  $(".nextThree").click(function(event){
+    event.preventDefault();
+    $("#afterFightText").hide()
+    indexThree +=1;
+    $("#textThree").text(roomThreeNarr[indexThree]);
+    if(indexThree === 6){
+      $(".nextThree").hide();
+      $(".roomFour").show();
+      $(".roomThree").hide();
+    }
+  });
+
 });
