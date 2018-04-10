@@ -24,7 +24,13 @@
               <input type="text" id="name" class="form-control" placeholder="Enter your name:">
             </div>
             <div class="col">
-              <input type="text" id="classSelect" class="form-control col" placeholder="Enter your class: Warrior, Wizard, or Thief">
+              <!-- <input type="text" id="classSelect" class="form-control" placeholder="Enter your class: Warrior, Wizard, or Thief"> -->
+              <select class="form-control" id="classSelect">
+                <option>Select a class:</option>
+                <option value="warrior">Warrior</option>
+                <option value="wizard">Wizard</option>
+                <option value="thief">Thief</option>
+              </select>
             </div>
           </div>
           <button type="submit" class="btn btn-primary">Enter</button>

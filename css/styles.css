@@ -63,6 +63,7 @@ p {
   border: 0;
   border-bottom: 1px solid white;
   border-radius: 0;
+  -webkit-appearance: none;
 }
 .form-control:focus {
   background: transparent;

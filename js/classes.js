@@ -19,7 +19,7 @@ function Thief(name) {
   this.damage = 7;
   this.special = 0;
 }
-var classInput = $("#classSelect").val();
+// var classInput = $("#classSelect").val();
 // if(classInput === "warrior") {
 //   var warrior = new Warrior();
 //   player.hp = warrior.health;
@@ -33,3 +33,4 @@ var classInput = $("#classSelect").val();
 //   player.hp = thief.health;
 //   player.damage = thief.damage;
 // };
+// console.log(player
