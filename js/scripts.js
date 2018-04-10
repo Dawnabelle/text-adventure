@@ -4,13 +4,14 @@ var missText = ['You slip as you move to strike and your hit doesn’t land. Try
 var dodgeText = ['With the grace of a ferret, you dart behind a narrow chasm and your enemy slams his fist in the wall.', 'You spin to your right and avoid your enemy’s attack.', 'You duck, narrowly missing a heavy through from your enemy.', 'You jump back and watch as your attackers punch just misses your gut.', 'Your enemy throws a punch and while you go to block, you slip. This send your enemy tumbling over you, giving you a chance to hold your ground.']
 var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
 var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
-var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you. Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
+var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you.','Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
     var inputName = $("#name").val();
     var player = new User(inputName);
     var enemy = new Enemy();
+    var classInput = $("#classSelect").val();
     event.preventDefault();
 
     $("#attack").click(function() {
@@ -36,8 +37,13 @@ $(document).ready(function(){
       $("#special").hide();
       player.special = 0;
     });
+    $("#userName").text(inputName);
+    $("#classTitle").text(classInput);
+    // $("#userHP").text("100" + " / " + "100")
     $(".titleCard").slideUp();
     $(".roomStart").slideDown();
+    $(".userStats").slideDown();
+
   });
 //start room
   var indexStart = 0;
@@ -70,6 +76,7 @@ $(document).ready(function(){
   $(".turn-back").click(function(event) {
     event.preventDefault();
     $(".choiceStart").show();
+    $("#leftStart").hide();
     $(".turn-back").hide();
   });
   // Go right choice
@@ -83,7 +90,7 @@ $(document).ready(function(){
   $(".nextTwo").click(function(event) {
     indexTwo +=1;
     $("#textTwo").text(roomTwoNarr[indexTwo]);
-    if(indexTwo === 4) {
+    if(indexTwo === 5) {
     $(".nextTwo").hide();
     $(".combat").show();
     $(".combat-text").hide();

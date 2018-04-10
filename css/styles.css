@@ -1,6 +1,11 @@
 #special {
   display: none;
 }
+
+form{
+  max-width: 500px;
+  margin: auto;
+}
 .turn-back {
   display: none;
   padding: 50px;
@@ -11,44 +16,54 @@ html {
   padding: 0;
   margin: 0;
 }
-
+.userStats{
+  max-width: 25%;
+  border: 4px solid #F8F8FF;
+  position: absolute;
+  right:0;
+  top:0;
+}
 body {
   height: 100vh;
   background: linear-gradient(#000 0%, #222 100%);
-
+  color: white;
 }
 h1{
   font-family: "Poiret One", sans-serif;
   text-align: center;
   color: #F8F8FF;
   font-size: 100px;
+  margin-top: 50px;
 }
 h2{
   font-family: "Poiret One", sans-serif;
   text-align: center;
   color: #F8F8FF;
+  margin-bottom: 200px;
 }
 h4{
   font-family: "Poiret One", sans-serif;
   text-align: center;
   color: #F8F8FF;
+  margin-bottom: 50px;
 }
 p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
 }
+
 .titleCard{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 50px;
+  width: 100%;
 }
 .hiddenID{
   display: none;
 }
-.container{
-  background-color: black;
-  max-width: 80%;
-  margin: auto;
-  height: 500px;
-}
+
 .titleCard{
   padding: 50px;
 }
@@ -56,6 +71,27 @@ p {
   display: none;
   padding: 50px;
   margin: 50px;
+}
+.form-control {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.form-control:focus {
+  background: transparent;
+  box-shadow: none;
+}
+#start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-group {
+  width: 100%;
 }
 button{
   margin-right: 50%;
