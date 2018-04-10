@@ -85,6 +85,9 @@ p {
   background: transparent;
   box-shadow: none;
 }
+#classTitle {
+  text-transform: capitalize;
+}
 #start {
   display: flex;
   justify-content: center;

@@ -22,7 +22,6 @@ $(document).ready(function(){
       $("#textTwo").hide();
       $("#userHP").text(player.hp)
       $(".combat-text").show();
-      console.log(player);
       enemy.userAttack();
       if ((enemy.enemyRoll[enemy.enemyRoll.length-1]) === 20) {
         $(".combat-text").text("The enemy dodged your attack");
@@ -43,6 +42,31 @@ $(document).ready(function(){
         $("#attack").hide();
         $(".afterFight").show();
       }
+    });
+    if(classInput === "warrior") {
+      var warrior = new Warrior();
+      player.hp = warrior.health;
+      player.damage = warrior.damage;
+      enemy.damage = player.damage;
+    } else if (classInput === "wizard") {
+      var wizard = new Wizard();
+      debugger;
+      player.hp = wizard.health;
+      player.damage = wizard.damage;
+      enemy.damage = player.damage;
+    } else {
+      var thief = new Thief();
+      player.hp = thief.health;
+      player.damage = thief.damage;
+      enemy.damage = player.damage;
+    };
+    console.log(enemy);
+    console.log(player);
+    $("#special").click(function() {
+      enemy.special();
+      console.log(enemy);
+      $("#special").hide();
+      player.special = 0;
     });
     $("#userName").text(inputName);
     $("#classTitle").text(classInput);

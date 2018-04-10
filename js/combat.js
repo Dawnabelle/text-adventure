@@ -9,6 +9,7 @@ function User(name) {
 function Enemy() {
   this.name = "Sparky";
   this.hp = 25;
+  this.damage = 0;
   this.enemyRoll = [];
 }
 
@@ -27,22 +28,19 @@ User.prototype.enemyAttack = function () {
   console.log(combatRoll, "this is the user combatRoll");
   console.log(this.combatRoll);
   if (combatRoll >= 19) {
-    this.special += 10;
     combatText = "You dodged the enemy attack!";
     console.log(combatText);
   } else if (combatRoll >= 17) {
-    this.special += 10;
     this.hp -= Math.floor(Math.random() * (6-2) + 2);
     combatText = "You blocked the enemy attack for reduced damage!";
   } else {
-    this.special += 10;
-    return this.hp -= Math.floor(Math.random() * (9-5) + 5);
+    return this.hp -= Math.floor(Math.random() * (9 - 5) + 5);
   }
 };
 //Damage that User does to Enemy
 Enemy.prototype.userAttack = function () {
   var enemyRoll = roll();
-  var damage = Math.floor(Math.random() * (11-5) + 5);
+  var damage = Math.floor(Math.random() * (11 - this.damage) + this.damage);
   console.log(enemyRoll, "This is the enemyRoll");
   if (enemyRoll === 20) {
     return "The enemy dodged your attack!"
