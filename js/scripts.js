@@ -1,7 +1,7 @@
 //backend & globals
 var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
 var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
-var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way the skeleton begins to jostle.', ' It has noticed your appearance in it’s eternal chamber and has begun stumbling towards you. Closer and closer it comes, readying its attack.', 'Do you stay and fight?']
+var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you. Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
@@ -58,17 +58,20 @@ $(document).ready(function(){
     $(".choiceStart").show();
     $(".turn-back").hide();
   });
+  // Go right choice
   $("#rightStart").click(function(event) {
     event.preventDefault();
     $(".choiceStart").hide();
     $(".roomTwo").show();
   });
-
+  // room two
   var indexTwo = 0;
-  indexTwo +=1;
-  $("#textTwo").text(roomTwoNarr[indexTwo]);
-  console.log(indexTwo);
-  if(indexTwo === 4) {
-    $("#combat").show();
-  }
+  $(".nextTwo").click(function(event) {
+    indexTwo +=1;
+    $("#textTwo").text(roomTwoNarr[indexTwo]);
+    if(indexTwo === 4) {
+    $(".nextTwo").hide();  
+    $(".combat").show();
+    }
+  });
 });
