@@ -3,10 +3,12 @@ function User(name) {
   this.name = name;
   this.hp = 100;
   this.special = 0;
+  this.combatRoll = [];
 }
 function Enemy() {
   this.name = "Sparky";
   this.hp = 25;
+  this.enemyRoll = [];
 }
 
 var roll = function() {
@@ -19,8 +21,10 @@ var roll = function() {
 //Damage that Enemy does to User
 User.prototype.enemyAttack = function () {
   var combatRoll = roll();
+  this.combatRoll.push(combatRoll);
   var combatText = "";
   console.log(combatRoll, "this is the user combatRoll");
+  console.log(this.combatRoll);
   if (combatRoll >= 19) {
     this.special += 10;
     combatText = "You dodged the enemy attack!";

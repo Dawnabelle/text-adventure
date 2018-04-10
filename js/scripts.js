@@ -15,8 +15,15 @@ $(document).ready(function(){
 
     $("#attack").click(function() {
       enemy.userAttack();
-      $(".combat-text").text(strikeText[Math.floor(Math.random()*strikeText.length)]);
       player.enemyAttack();
+      debugger;
+      if ((player.combatRoll[player.combatRoll.length-1]) >= 19) {
+        $(".combat-text").text(dodgeText[Math.floor(Math.random()*dodgeText.length)]);
+      } else if ((player.combatRoll[player.combatRoll.length-1]) >= 17) {
+        $(".combat-text").text("You blocked the attack")
+      } else {
+    // create array for when enemy strikes user
+      }
       $("#textTwo").hide();
       $(".combat-text").show();
       if (player.special >= 30) {
