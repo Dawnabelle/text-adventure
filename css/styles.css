@@ -63,14 +63,7 @@ p {
 .hiddenID{
   display: none;
 }
-.container{
-  max-width: 80%;
-  margin: auto;
-  height: 500px;
-  padding-top: 100px;
-  float: left;
-  padding-right: 30px;
-}
+
 .titleCard{
   padding: 50px;
 }
