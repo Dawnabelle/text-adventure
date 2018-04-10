@@ -16,13 +16,16 @@
     <div class="container">
       <div class="titleCard">
         <h1>Cavern</h1>
-        <h2> A Text-Based Adventure</h2>
-        <h4>A team project by Bobby Martin, Garnett Puett, Isaac Shoman, Ami Cooper, and Dawn Mott</h4>
+        <!-- <h2> A Text-Based Adventure</h2> -->
+        <!-- <h4>A team project by Bobby Martin, Garnett Puett, Isaac Shoman, Ami Cooper, and Dawn Mott</h4> -->
         <form id="start">
-          <div class="form-group">
-            <label for="name">Enter your name:</label>
-            <input type="text" id="name" class="form-control">
-            <input type="text" id="classSelect" class="form-control" placeholder="Enter your class: Warrior, Wizard, or Thief">
+          <div class="form-group row">
+            <div class="col mr-3">
+              <input type="text" id="name" class="form-control" placeholder="Enter your name:">
+            </div>
+            <div class="col">
+              <input type="text" id="classSelect" class="form-control col" placeholder="Enter your class: Warrior, Wizard, or Thief">
+            </div>
           </div>
           <button type="submit" class="btn btn-primary">Enter</button>
         </form>
