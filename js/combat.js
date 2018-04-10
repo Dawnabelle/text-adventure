@@ -1,7 +1,7 @@
 //CHARACTER CONSTRUCTORS
 function User(name) {
   this.name = name;
-  this.hp = 0;
+  this.hp = 100;
   this.damage = 0;
   this.special = 0;
   this.combatRoll = [];
