@@ -14,18 +14,18 @@
     <title>Cavern: A Text-Based Adventure</title>
   </head>
   <body>
-    <!-- <div class="titleCard">
+    <div class="titleCard">
       <h1>Cavern</h1>
       <h2> A Text-Based Adventure</h2>
       <h4>A team project by Bobby Martin, Garnett Puett, Isaac Shoman, Ami Cooper, and Dawn Mott</h4>
       <form id="start">
         <div class="form-group row">
           <div class="col mr-3">
-            <input type="text" id="name" class="form-control" placeholder="Enter your name:">
+            <input type="text" id="name" class="form-control" placeholder="Enter your name:" required>
           </div>
           <div class="col">
-            <select class="form-control" id="classSelect">
-              <option>Select a class:</option>
+            <select class="form-control" id="classSelect" required>
+              <option value="" disabled selected>Select a class:</option>
               <option value="Warrior">Warrior</option>
               <option value="Wizard">Wizard</option>
               <option value="Thief">Thief</option>
@@ -34,7 +34,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Enter</button>
       </form>
-    </div> -->
+    </div>
     <div class="container">
       <div class="hiddenDiv userStats">
         <p>Player: <span id="userName"></p>
@@ -74,6 +74,7 @@
           <button type="button" class="btn btn-danger" id="special">Special Attack</button>
         </div>
       </div>
+
     </div>
   </body>
 </html>
