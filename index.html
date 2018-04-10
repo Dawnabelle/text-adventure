@@ -11,7 +11,6 @@
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One|Press+Start+2P" rel="stylesheet">
-
     <title>Cavern: A Text-Based Adventure</title>
   </head>
   <body>
@@ -38,10 +37,36 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col col-md-7">
+        <div class="col-md-7">
           <div class="roomStart hiddenDiv">
             <p id="textStart">You enter a small cavern.</p>
             <button type="button" class="nextStart btn btn-light"> >>> </button>
+          </div>
+          <div class="roomOne hiddenDiv">
+            <p id="textOne">The path on your left leads towards a small hole, just big enough to crawl through.</p>
+            <button type="button" class="nextOne btn btn-primary"> >>> </button>
+          </div>
+          <div class="turn-back">
+            <button type="button" class="btn btn-primary" name="button">Turn Back</button>
+          </div>
+          <div class="roomTwo hiddenDiv">
+            <p id="textTwo">You take the path on the right, crouching through a low archway.</p>
+            <button type="button" class="nextTwo btn btn-primary"> >>> </button>
+          </div>
+          <div class="roomThree hiddenDiv">
+            <p id="textThree"></p>
+            <button type="button" class="nextThree btn btn-primary"> >>> </button>
+          </div>
+          <div class="combat hiddenDiv">
+            <p class="combat-text"></p>
+            <p class="enemy-text"></p>
+            <div class="col">
+              <button type="button" class="btn btn-warning" id="attack">Attack</button>
+            </div>
+            <div>
+              <p id="afterFightText"></p>
+              <button type="button" class="afterFight btn btn-primary"> >>> </button>
+            </div>
           </div>
           <div class="choiceStart hiddenDiv">
             <div class="row">
@@ -53,26 +78,6 @@
               </div>
             </div>
           </div>
-          <div class="roomOne hiddenDiv">
-            <p id="textOne">The path on your left leads towards a small hole, just big enough to crawl through.</p>
-            <button type="button" class="nextOne btn btn-light"> >>> </button>
-          </div>
-          <div class="turn-back">
-            <button type="button" class="btn btn-light" name="button">Turn Back</button>
-          </div>
-          <div class="roomTwo hiddenDiv">
-            <p id="textTwo">You take the path on the right, crouching through a low archway.</p>
-            <button type="button" class="nextTwo btn btn-light"> >>> </button>
-          </div>
-          <div class="combat hiddenDiv row">
-            <p class="combat-text"></p>
-            <div class="col col-md">
-              <button type="button" class="btn btn-warning" id="attack">Attack</button>
-            </div>
-            <div class="col col-md">
-              <button type="button" class="btn btn-danger" id="special">Special Attack</button>
-            </div>
-          </div>
         </div>
         <div class="col col-md-5">
           <div class="userStats">
@@ -81,34 +86,6 @@
             <p>HP: <span id="userHP"></p>
           </div>
         </div>
-      </div>
-      <div class="roomOne hiddenDiv">
-        <p id="textOne">The path on your left leads towards a small hole, just big enough to crawl through.</p>
-        <button type="button" class="nextOne btn btn-primary"> >>> </button>
-      </div>
-      <div class="turn-back">
-        <button type="button" class="btn btn-primary" name="button">Turn Back</button>
-      </div>
-      <div class="roomTwo hiddenDiv">
-        <p id="textTwo">You take the path on the right, crouching through a low archway.</p>
-        <button type="button" class="nextTwo btn btn-primary"> >>> </button>
-      </div>
-      <div class="combat hiddenDiv row">
-        <p class="combat-text"></p>
-        <p class="enemy-text"></p>
-        <div class="col col-md">
-          <button type="button" class="btn btn-warning" id="attack">Attack</button>
-        </div>
-        <div class="col col-md">
-        </div>
-        <div>
-          <p id="afterFightText"></p>
-          <button type="button" class="afterFight btn btn-primary"> >>> </button>
-        </div>
-      </div>
-      <div class="roomThree hiddenDiv">
-        <p id="textThree"></p>
-        <button type="button" class="nextThree btn btn-primary"> >>> </button>
       </div>
       <div class="credits">
         <h1>Credits</h1>
@@ -120,7 +97,6 @@
         <p>Isaac Shoman</p>
         <p>________________________</p>
         <p>Special thanks to Epicodus!</p>
-
       </div>
     </div>
   </body>
