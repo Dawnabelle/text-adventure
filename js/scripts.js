@@ -1,6 +1,7 @@
 //backend & globals
 var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
 var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
+var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way the skeleton begins to jostle.', ' It has noticed your appearance in it’s eternal chamber and has begun stumbling towards you. Closer and closer it comes, readying its attack.', 'Do you stay and fight?']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
@@ -25,12 +26,12 @@ $(document).ready(function(){
     $(".roomStart").slideDown();
   });
 //start room
-var indexStart = 0;
+  var indexStart = 0;
   $(".nextStart").click(function(event){
     event.preventDefault();
     indexStart +=1;
     $("#textStart").text(roomStartNarr[indexStart]);
-    if(indexStart === 3){
+    if(indexStart === 4){
       $(".roomStart").hide();
       $(".choiceStart").show();
     }
@@ -42,23 +43,32 @@ var indexStart = 0;
     $(".roomOne").show();
   })
 //room one
-var indexOne = 0;
-$(".nextOne").click(function(event){
-  event.preventDefault();
-  indexOne +=1;
-  $("#textOne").text(roomOneNarr[indexOne]);
-  if(indexStart === 3){
-    $(".roomOne").hide();
+  var indexOne = 0;
+  $(".nextOne").click(function(event){
+    event.preventDefault();
+    indexOne +=1;
+    $("#textOne").text(roomOneNarr[indexOne]);
+    if(indexOne === 3){
+      $(".roomOne").hide();
+      $(".turn-back").show();
+    }
+  });
+  $(".turn-back").click(function(event) {
+    event.preventDefault();
     $(".choiceStart").show();
-  }
-});
+    $(".turn-back").hide();
+  });
+  $("#rightStart").click(function(event) {
+    event.preventDefault();
+    $(".choiceStart").hide();
+    $(".roomTwo").show();
+  });
 
-//   $(".nextTextTwo").click(function(event){
-//     event.preventDefault();
-//     indexTwo +=1;
-//     $(".textHere1").text(roomLeftOne[indexTwo])
-//     if(indexTwo ===2){
-//
-//     }
-//   });
+  var indexTwo = 0;
+  indexTwo +=1;
+  $("#textTwo").text(roomTwoNarr[indexTwo]);
+  console.log(indexTwo);
+  if(indexTwo === 4) {
+    $("#combat").show();
+  }
 });
