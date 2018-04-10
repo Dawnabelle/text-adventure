@@ -1,6 +1,11 @@
 #special {
   display: none;
 }
+
+form{
+  max-width: 500px;
+  margin: auto;
+}
 .turn-back {
   display: none;
   padding: 50px;
@@ -29,27 +34,24 @@ h1{
   color: #F8F8FF;
   font-size: 100px;
   margin-top: 50px;
-  margin-bottom: 20px;
 }
 h2{
   font-family: "Poiret One", sans-serif;
   text-align: center;
   color: #F8F8FF;
+  margin-bottom: 200px;
 }
 h4{
   font-family: "Poiret One", sans-serif;
   text-align: center;
   color: #F8F8FF;
+  margin-bottom: 50px;
 }
 p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .titleCard{
   padding-right: 15px;
   padding-left: 15px;
@@ -61,6 +63,7 @@ p {
 .hiddenID{
   display: none;
 }
+
 .titleCard{
   padding: 50px;
 }
@@ -86,6 +89,7 @@ p {
   align-items: center;
   flex-direction: column;
 }
+
 .form-group {
   width: 100%;
 }
