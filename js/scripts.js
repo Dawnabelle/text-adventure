@@ -9,7 +9,7 @@ var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equall
 var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you.','Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
 var roomTwoAfterFight = ['', 'You rest a minute and try to collect your feelings.', 'What just happened?', 'The scattered bones move no more.', 'Sensing no other immediate threat, you proceed.']
 var roomThreeNarr = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.', 'There are no enemies in this room, save the path itself.', 'A rickety bridge is in front of you and is the only way across.', 'You step out with your right foot and the bridge begins to sway.', 'Anxiously, you press on.']
-var roomFourNarr = ['As you make your way further along, the smell reaches you before your eyes connect with the source.','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Do you stay and fight?']
+var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Do you stay and fight?']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
@@ -147,10 +147,19 @@ $(document).ready(function(){
     indexThree +=1;
     $("#textThree").text(roomThreeNarr[indexThree]);
     if(indexThree === 6){
+      $(".roomThree").hide();
       $(".nextThree").hide();
       $(".roomFour").show();
-      $(".roomThree").hide();
+      $("#textFour").show();
+      $(".nextFour").show();
     }
   });
+  // room four
+  var indexFour = 0;
+  $(".nextFour").click(function(event) {
+    $("#textThree").hide();
+    indexFour +=1;
+    $("#textFour").text(roomFourNarr[indexFour]);
 
+  });
 });
