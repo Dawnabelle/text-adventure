@@ -1,6 +1,7 @@
 //backend & globals
-var roomOneNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
-var roomLeftOne = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
+var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
+var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
+var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you. Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
@@ -22,25 +23,55 @@ $(document).ready(function(){
       player.special = 0;
     });
     $(".titleCard").slideUp();
-    $(".adventureTime").slideDown();
+    $(".roomStart").slideDown();
   });
-  var indexOne = 0;
-  $(".nextText").click(function(event){
+//start room
+  var indexStart = 0;
+  $(".nextStart").click(function(event){
     event.preventDefault();
-    indexOne+=1
-    $(".textHere").text(roomOneNarr[indexOne]);
-    if(indexOne === 3){
-      $(".choiceOne").slideDown();
-      $(".nextText").slideUp();
+    indexStart +=1;
+    $("#textStart").text(roomStartNarr[indexStart]);
+    if(indexStart === 4){
+      $(".roomStart").hide();
+      $(".choiceStart").show();
     }
+  });
+//make sure next buttons are in the last line of the arrays
+//Go left choice
+  $("#leftStart").click(function(event){
+    $(".choiceStart").hide();
+    $(".roomOne").show();
   })
-//Go left
-  var indexTwo = 0;
-  $("#leftOne").click(function(event){
+//room one
+  var indexOne = 0;
+  $(".nextOne").click(function(event){
     event.preventDefault();
-    $(".nextText1").show();
-    $("#rightOne").hide();
-    $("#leftOne").hide();
-    $(".textHere").text("The path on your left leads towards a small hole, just big enough to crawl through.")
-  })
-})
+    indexOne +=1;
+    $("#textOne").text(roomOneNarr[indexOne]);
+    if(indexOne === 3){
+      $(".roomOne").hide();
+      $(".turn-back").show();
+    }
+  });
+  $(".turn-back").click(function(event) {
+    event.preventDefault();
+    $(".choiceStart").show();
+    $(".turn-back").hide();
+  });
+  // Go right choice
+  $("#rightStart").click(function(event) {
+    event.preventDefault();
+    $(".choiceStart").hide();
+    $(".roomTwo").show();
+  });
+  // room two
+  var indexTwo = 0;
+  $(".nextTwo").click(function(event) {
+    indexTwo +=1;
+    $("#textTwo").text(roomTwoNarr[indexTwo]);
+    if(indexTwo === 4) {
+    $(".nextTwo").hide();  
+    $(".combat").show();
+    }
+  });
+});

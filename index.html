@@ -36,15 +36,42 @@
           <button type="submit" class="btn btn-primary">Enter</button>
         </form>
       </div>
-      <div class="adventureTime hiddenDiv">
-        <p class="textHere">You enter a small cavern.</p>
-        <button type="button" class="nextText btn btn-primary"> >>> </button>
-        <div class="choiceOne hidden">
-          <button type="button" class="btn btn-primary" id="leftOne">Go left</button>
-          <button type="button" class="btn btn-primary" id="rightOne">Go right</button>
-          <button type="button" class="nextText1 btn btn-primary"> >>> </button>
+      <div class="roomStart hiddenDiv">
+        <p id=textStart>You enter a small cavern.</p>
+        <button type="button" class="nextStart btn btn-primary"> >>> </button>
+      </div>
+      <div class="choiceStart hiddenDiv">
+        <button type="button" class="btn btn-primary" id="leftStart">Go left</button>
+        <button type="button" class="btn btn-primary" id="rightStart">Go right</button>
+      </div>
+      <div class="roomOne hiddenDiv">
+        <p id="textOne">The path on your left leads towards a small hole, just big enough to crawl through.</p>
+        <button type="button" class="nextOne btn btn-primary"> >>> </button>
+      </div>
+      <div class="turn-back">
+        <button type="button" class="btn btn-primary" name="button">Turn Back</button>
+      </div>
+      <div class="roomTwo hiddenDiv">
+        <p id="textTwo">You take the path on the right, crouching through a low archway.</p>
+        <button type="button" class="nextTwo btn btn-primary"> >>> </button>
+      </div>
+      <div class="combat hiddenDiv row">
+        <div class="col col-md">
+          <button type="button" class="btn btn-warning" id="attack">Attack</button>
+        </div>
+        <div class="col col-md">
+          <button type="button" class="btn btn-danger" id="special">Special Attack</button>
         </div>
       </div>
     </div>
   </body>
 </html>
+
+<!--
+<div class="choiceTwo hiddenDiv">
+  <p class="textHere1"></p>
+  <button type="button" class="nextTextTwo btn btn-primary"> >>> </button>
+</div>
+<div class="choiceThree hiddenDiv">
+
+</div> -->
