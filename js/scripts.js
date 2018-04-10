@@ -19,6 +19,7 @@ $(document).ready(function(){
     var classInput = $("#classSelect").val();
     event.preventDefault();
     $("#attack").click(function() {
+      $("#textTwo").hide();
       $("#userHP").text(player.hp)
       $(".combat-text").show();
       console.log(player);
