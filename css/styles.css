@@ -1,6 +1,11 @@
 #special {
   display: none;
 }
+
+form{
+  max-width: 500px;
+  margin: auto;
+}
 .turn-back {
   display: none;
   padding: 50px;
@@ -33,11 +38,13 @@ h2{
   font-family: "Poiret One", sans-serif;
   text-align: center;
   color: #F8F8FF;
+  margin-bottom: 200px;
 }
 h4{
   font-family: "Poiret One", sans-serif;
   text-align: center;
   color: #F8F8FF;
+  margin-bottom: 50px;
 }
 p {
   font-family: "Press Start 2P", sans-serif;
