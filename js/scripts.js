@@ -17,8 +17,9 @@ $(document).ready(function(){
     var enemy = new Enemy();
     var classInput = $("#classSelect").val();
     event.preventDefault();
-
     $("#attack").click(function() {
+      $("#userHP").text(player.hp)
+      console.log(player);
       enemy.userAttack();
       if ((enemy.enemyRoll[enemy.enemyRoll.length-1]) === 20) {
         $(".combat-text").text("The enemy dodged your attack");
@@ -47,7 +48,7 @@ $(document).ready(function(){
     });
     $("#userName").text(inputName);
     $("#classTitle").text(classInput);
-    // $("#userHP").text("100" + " / " + "100")
+    $("#userHP").text(player.hp)
     $(".titleCard").slideUp();
     $(".roomStart").slideDown();
     $(".userStats").slideDown();
