@@ -13,6 +13,18 @@
     <title>Cavern: A Text-Based Adventure</title>
   </head>
   <body>
+    <div class="titleCard">
+      <h1>Cavern</h1>
+      <h2> A Text-Based Adventure</h2>
+      <h4>A team project by Bobby Martin, Garnett Puett, Isaac Shoman, Ami Cooper, and Dawn Mott</h4>
+      <form id="start">
+        <div class="form-group">
+          <label for="name">Enter your name:</label>
+          <input type="text" id="name" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Enter</button>
+      </form>
+    </div>
     <div class="container">
       <div class="titleCard">
         <h1>Cavern</h1>
@@ -35,14 +47,24 @@
           </div>
           <button type="submit" class="btn btn-primary">Enter</button>
         </form>
+      <div class="hiddenDiv userStats">
+        <p>Player: <span id="userName"></p>
+        <p>Class: <span id="classTitle"></p>
+        <p>HP: <span id="userHP"></p>
       </div>
       <div class="roomStart hiddenDiv">
         <p id="textStart">You enter a small cavern.</p>
         <button type="button" class="nextStart btn btn-primary"> >>> </button>
       </div>
       <div class="choiceStart hiddenDiv">
-        <button type="button" class="btn btn-primary" id="leftStart">Go left</button>
-        <button type="button" class="btn btn-primary" id="rightStart">Go right</button>
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary" id="leftStart">Go left</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" id="rightStart">Go right</button>
+          </div>
+        </div>
       </div>
       <div class="roomOne hiddenDiv">
         <p id="textOne">The path on your left leads towards a small hole, just big enough to crawl through.</p>
