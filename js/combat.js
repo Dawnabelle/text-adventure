@@ -51,6 +51,6 @@ Enemy.prototype.userAttack = function () {
   }
 };
 
-Enemy.prototype.special = function () {
-  return this.hp -= 20;
-};
+// Enemy.prototype.special = function () {
+//   return this.hp -= 20;
+// };
