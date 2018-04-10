@@ -42,6 +42,16 @@
             <p id="textStart">You enter a small cavern.</p>
             <button type="button" class="nextStart btn btn-light"> >>> </button>
           </div>
+          <div class="choiceStart hiddenDiv">
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-light" id="leftStart">Go left</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-light" id="rightStart">Go right</button>
+              </div>
+            </div>
+          </div>
           <div class="roomOne hiddenDiv">
             <p id="textOne">The path on your left leads towards a small hole, just big enough to crawl through.</p>
             <button type="button" class="nextOne btn btn-primary"> >>> </button>
@@ -52,10 +62,6 @@
           <div class="roomTwo hiddenDiv">
             <p id="textTwo">You take the path on the right, crouching through a low archway.</p>
             <button type="button" class="nextTwo btn btn-primary"> >>> </button>
-          </div>
-          <div class="roomThree hiddenDiv">
-            <p id="textThree"></p>
-            <button type="button" class="nextThree btn btn-primary"> >>> </button>
           </div>
           <div class="combat hiddenDiv">
             <p class="combat-text"></p>
@@ -68,15 +74,9 @@
               <button type="button" class="afterFight btn btn-primary"> >>> </button>
             </div>
           </div>
-          <div class="choiceStart hiddenDiv">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-light" id="leftStart">Go left</button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-light" id="rightStart">Go right</button>
-              </div>
-            </div>
+          <div class="roomThree hiddenDiv">
+            <p id="textThree"></p>
+            <button type="button" class="nextThree btn btn-primary"> >>> </button>
           </div>
         </div>
         <div class="col col-md-5">
