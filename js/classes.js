@@ -1,15 +1,12 @@
-function Warrior(name) {
-  this.name = name;
+function Warrior() {
   this.health = 100;
   this.damage = 5;
 }
-function Wizard(name) {
-  this.name = name;
+function Wizard() {
   this.health = 70;
   this.damage = 8;
 }
-function Thief(name) {
-  this.name = name;
+function Thief() {
   this.health = 80;
   this.damage = 7;
 }
