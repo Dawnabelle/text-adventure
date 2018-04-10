@@ -20,7 +20,7 @@ html {
 }
 body {
   height: 100vh;
-  background: linear-gradient(#000 0%, #222 100%);
+  background: linear-gradient(#000 0%, #333 100%);
 
 }
 h1{
@@ -28,6 +28,8 @@ h1{
   text-align: center;
   color: #F8F8FF;
   font-size: 100px;
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
 h2{
   font-family: "Poiret One", sans-serif;
@@ -43,20 +45,24 @@ p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
 }
-.container{
-  padding-top: 100  px;
-}
+
 .titleCard{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 50px;
+  max-width: 80%;
 }
 .hiddenID{
   display: none;
 }
 .container{
-  background-color: black;
   max-width: 80%;
   margin: auto;
   height: 500px;
+  padding-top: 100px;
+  float: left;
 }
 .titleCard{
   padding: 50px;
