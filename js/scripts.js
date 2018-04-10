@@ -32,7 +32,7 @@ $(document).ready(function(){
       if ((player.combatRoll[player.combatRoll.length-1]) >= 19) {
         $(".enemy-text").text(dodgeText[Math.floor(Math.random()*dodgeText.length)]);
       } else if ((player.combatRoll[player.combatRoll.length-1]) >= 17) {
-        $(".enemy-text").text("You blocked the attack")
+        $(".enemy-text").text("You blocked the attack");
       } else {
         $(".enemy-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
       }
@@ -160,6 +160,29 @@ $(document).ready(function(){
     $("#textThree").hide();
     indexFour +=1;
     $("#textFour").text(roomFourNarr[indexFour]);
+    if(indexFour === 3) {
+      $(".nextFour").hide();
+      $("#textFour").hide();
+      $(".combat2").show();
+    }
+  });
+  // combat 2
+  $("#attack2").click(function(event) {
+    $(".combat2-text").show();
+    enemy.userAttack();
+    if ((enemy.enemyRoll[enemy.enemyRoll.length-1]) === 20) {
+      $(".combat2-text").text("The enemy dodged your attack!")
+    } else {
+      $(".combat2-text").text(strikeText[Math.floor(Math.random()*strikeText.length)]);
+    }
+    player.enemyAttack();
+    if ((player.combatRoll[player.combatRoll.length-1]) >= 19) {
+      $(".enemy2-text").text(dodgeText[Math.floor(Math.random()*dodgeText.length)]);
+    } else if ((player.combatRoll[player.combatRoll.length-1]) >= 17) {
+      $(".enemy2-text").text("You blocked the attack");
+    } else {
+      $(".enemy2-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
+    }
 
   });
 });
