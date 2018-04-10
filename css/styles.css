@@ -5,7 +5,13 @@ html {
   padding: 0;
   margin: 0;
 }
-
+.userStats{
+  max-width: 25%;
+  border: 4px solid #F8F8FF;
+  position: absolute;
+  right:0;
+  top:0;
+}
 body {
   height: 100vh;
   background: linear-gradient(#000 0%, #222 100%);
@@ -30,6 +36,9 @@ h4{
 p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
+}
+.container{
+  padding-top: 100  px;
 }
 .titleCard{
   padding: 50px;

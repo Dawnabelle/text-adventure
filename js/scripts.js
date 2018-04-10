@@ -21,8 +21,13 @@ $(document).ready(function(){
       $("#special").hide();
       player.special = 0;
     });
+    $("#userName").text(inputName)
+    // $("#classTitle").text("Warrior")
+    // $("#userHP").text("100" + " / " + "100")
     $(".titleCard").slideUp();
     $(".roomStart").slideDown();
+    $(".userStats").slideDown();
+
   });
 //start room
 var indexStart = 0;
