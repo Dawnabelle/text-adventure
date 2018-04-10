@@ -1,4 +1,8 @@
-#special {
+/*#special {
+  display: none;
+}*/
+
+.afterFight{
   display: none;
 }
 form{
