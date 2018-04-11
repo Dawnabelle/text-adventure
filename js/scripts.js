@@ -13,7 +13,7 @@ var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh bloo
 
 var roomFourAfterFight = ['', 'Covered in sweat, blood, and enemy entrails, you stand victorious over the chunky, gooey body of your foe.', 'Leaning against a mid size boulder and reflect over all you’ve been through in your travels.', 'You’ve killed, you’ve mamed, and all you have to show for it are a bunch of cuts, bruises, and a metallic taste in your mouth.', 'You wipe the gook out of your eyes and bravely step forward.', 'You turn to your left and notice a crack in the far wall, just big enough to squeeze through if you hold your breath.', 'You look around and notice two paths: one on your left and one on your right.', 'Do you squeeze through the crack, or head through the larger opening?']
 
-var roomFiveNarr = ['', 'You find yourself in an empty cavernous room, with a ceiling so far above, you can’t see it. A gentle light floats down from the invisible heights above, casting deep shadows into the far corners.', 'At first, there seems to be only one opening at the far end of the room.', 'As you walk towards the opening in the rock wall, a quick flash of light catches your eye.']
+var roomFiveNarr = ['',  'Water slowly cascades down the wall on your right and you move closer towards the sound.', 'The water falls into a small pool, and beyond your reflection, you see a glass vial.', 'Reaching into the cool water, you grasp the vial in your hand.', 'Drinking the potion contained inside, you wake up at twilight in a familiar, friendly field.', 'A new adventure awaits.', 'The end.']
 
 var hpZero = ['', 'Darkness overtakes your eyes.', 'The pain has become unbearable.', 'You move to swing, but you have no control of your arms.', 'In fact you no longer have arms, nor a body.', 'You’ve become a spirit, floating through the halls of the cavern until the end of days.']
 
@@ -235,14 +235,18 @@ $(document).ready(function(){
       $(".choiceSqueeze").show();
     }
   });
+  $(".choiceSqueezeNext").click(function(event) {
+    $(".choiceSqueeze").hide();
+    $(".roomFive").show();
+  });
 
   var indexFive = 0;
-  $(".emptyRoomNext").click(function(){
-    $("#afterFightText2").hide();
+  $(".nextFive").click(function(){
+    $(".choiceSqueeze").hide();
     indexFive +=1;
-    $("roomFiveText").text(roomFiveNarr[indexFive]);
-    if(indexFive === 7) {
-      $("#emptyRoomNarr").hide();
+    $("#roomFiveText").text(roomFiveNarr[indexFive]);
+    if(indexFive === 6) {
+      $(".nextFive").hide();
     }
   })
 
