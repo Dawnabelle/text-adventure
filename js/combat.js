@@ -31,10 +31,10 @@ User.prototype.enemyAttack = function () {
     combatText = "You dodged the enemy attack!";
     console.log(combatText);
   } else if (combatRoll >= 17) {
-    this.hp -= Math.floor(Math.random() * (6-2) + 2);
+    this.hp -= Math.floor(Math.random() * (9-5) + 5);
     combatText = "You blocked the enemy attack for reduced damage!";
   } else {
-    return this.hp -= Math.floor(Math.random() * (9 - 5) + 5);
+    return this.hp -= Math.floor(Math.random() * (16 - 10) + 10);
   }
 };
 //Damage that User does to Enemy
