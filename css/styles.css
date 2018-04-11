@@ -22,9 +22,10 @@ form{
   width: 100%;
   margin: auto;
 }
-/*#shroomin{
-  display: none;
-}*/
+#shroomPic{
+  max-width: 100%;
+
+}
 .turn-back {
   display: none;
   padding: 50px;
