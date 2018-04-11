@@ -49,6 +49,7 @@ $(document).ready(function(){
         $(".enemy-text").hide();
         $("#attack").hide();
         $(".afterFight").show();
+        $("#enemy1").fadeOut("slow");
       }
       if (player.hp <=0){
         $(".deathZeroHp").fadeIn("slow");
@@ -203,6 +204,10 @@ $(document).ready(function(){
       $(".enemy2-text").hide();
       $("#attack2").hide();
       $(".afterFight2").show();
+      $("#enemy2").fadeOut("slow");
+    }
+    if (player.hp <=0){
+      $(".deathZeroHp").fadeIn("slow");
     }
     if (player.hp <=0){
       $(".deathZeroHp").fadeIn("slow");
