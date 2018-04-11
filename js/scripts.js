@@ -21,6 +21,7 @@ var roomSixNarr = ['', 'This must be the exit you’ve been searching for.', 'As
 
 //front end
 $(document).ready(function(){
+
   $("button#enterButton").click(function() {
     $("form.char-select-form").fadeIn(3300);
     $("button#helpMe").fadeIn(3300)
@@ -31,12 +32,40 @@ $(document).ready(function(){
     $(".theCavalry").fadeIn(3300);
   })
   $("#start").submit(function(event) {
+    function hpPulse(){
+      if (classInput === "warrior" || classInput === "wizard" || classInput === "thief") {
+        $("#userHP").addClass('hurt');
+        setTimeout(function() {
+          $("#userHP").removeClass();
+        }, 600);
+      }
+    };
+
     var inputName = $("#name").val();
     var player = new User(inputName);
     var skeletor = new Enemy("Skeletor");
     var slimeguy = new Enemy("Slimeguy");
     var classInput = $("#classSelect").val();
     event.preventDefault();
+    if(classInput === "warrior") {
+      var warrior = new Warrior();
+      player.hp = warrior.health;
+      player.damage = warrior.damage;
+      skeletor.damage = player.damage;
+      slimeguy.damage = player.damage;
+    } else if (classInput === "wizard") {
+      var wizard = new Wizard();
+      player.hp = wizard.health;
+      player.damage = wizard.damage;
+      skeletor.damage = player.damage;
+      slimeguy.damage = player.damage;
+    } else {
+      var thief = new Thief();
+      player.hp = thief.health;
+      player.damage = thief.damage;
+      skeletor.damage = player.damage;
+      slimeguy.damage = player.damage;
+    };
     $("#attack").click(function() {
       $("#textTwo").hide();
       $("#userHP").text(player.hp)
@@ -62,37 +91,17 @@ $(document).ready(function(){
         $(".afterFight").show();
         $("#enemy1").fadeOut("slow");
       }
+      hpPulse();
       if (player.hp <=0){
         $(".deathZeroHp").fadeIn("slow");
       }
     });
-    if(classInput === "warrior") {
-      var warrior = new Warrior();
-      player.hp = warrior.health;
-      player.damage = warrior.damage;
-      skeletor.damage = player.damage;
-      slimeguy.damage = player.damage;
-    } else if (classInput === "wizard") {
-      var wizard = new Wizard();
-      player.hp = wizard.health;
-      player.damage = wizard.damage;
-      skeletor.damage = player.damage;
-      slimeguy.damage = player.damage;
-    } else {
-      var thief = new Thief();
-      player.hp = thief.health;
-      player.damage = thief.damage;
-      skeletor.damage = player.damage;
-      slimeguy.damage = player.damage;
-    };
-
     $("#userName").text(inputName);
     $("#classTitle").text(classInput);
     $("#userHP").text(player.hp)
     $(".titleCard").slideUp();
     $(".roomStart").slideDown();
     $(".userStats").slideDown();
-
 
 //start room
   var indexStart = 0;
@@ -131,6 +140,7 @@ $(document).ready(function(){
       player.hp -= 15
       $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. - 15 health")
     }
+    hpPulse();
     $("#shroomEat").prepend('<img src="img/shroomin.gif" alt="psychaeldic colors swirling" id="shroomPic"><p>')
     $("#userHP").text(player.hp);
     $(".mushroom").hide();
@@ -222,6 +232,7 @@ $(document).ready(function(){
       $(".afterFight2").show();
       $("#enemy2").fadeOut("slow");
     }
+    hpPulse();
     if (player.hp <=0){
       $(".deathZeroHp").fadeIn("slow");
     }
