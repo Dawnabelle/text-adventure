@@ -75,6 +75,7 @@ p {
 }
 .dialogue .hiddenDiv #attack {
   top: 20px;
+  left: 0;
   z-index: 2;
   bottom: initial;
 }
@@ -94,8 +95,7 @@ p {
 }
 .hiddenDiv{
   display: none;
-  /* margin: 100px; */
-  height: 300px;
+  min-height: 300px;
   position: relative;
 }
 .nextStart, .nextTwo {
