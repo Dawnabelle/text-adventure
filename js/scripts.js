@@ -117,6 +117,7 @@ $(document).ready(function(){
 //Go left choice
   $("#leftStart").click(function(){
     $(".choiceStart").hide();
+    $(".go-left-button").hide();
     $(".roomOne").show();
   })
 //room one
@@ -141,7 +142,8 @@ $(document).ready(function(){
       $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. - 15 health")
     }
     hpPulse();
-    $("#shroomEat").prepend('<img src="img/shroomin.gif" alt="psychaeldic colors swirling" id="shroomPic"><p>')
+    // $("#shroomEat").prepend('<img src="img/shroomin.gif" alt="psychaeldic colors swirling" id="shroomPic"><p>')
+    $("body").addClass('shroomin-bg');
     $("#userHP").text(player.hp);
     $(".mushroom").hide();
   });
@@ -156,6 +158,7 @@ $(document).ready(function(){
     $(".choiceStart").hide();
     $("#shroomEat").hide();
     $(".roomTwo").show();
+    $("body").removeClass('shroomin-bg');
   });
   // room two (combat Room)
   var indexTwo = 0;
