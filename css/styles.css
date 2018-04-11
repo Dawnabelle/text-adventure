@@ -1,6 +1,3 @@
-/*#special {
-  display: none;
-}*/
 .deathZeroHp{
   position: absolute;
   top: 0px;
@@ -22,6 +19,7 @@
 }*/
 form{
   max-width: 500px;
+  width: 100%;
   margin: auto;
 }
 .turn-back {
@@ -68,26 +66,70 @@ p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
 }
-
+.container {
+  padding-top: 100px;
+}
 .titleCard{
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   padding: 50px;
   width: 100%;
   text-align: center;
 }
-.hiddenID{
+.dialogue {
+  position: relative;
+}
+.dialogue .hiddenDiv, .after-fight-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.dialogue .hiddenDiv button {
+  position: absolute;
+  bottom: 0;
+}
+.dialogue .hiddenDiv #attack {
+  top: 20px;
+  left: 0;
+  z-index: 2;
+  bottom: initial;
+}
+.choiceStart .row {
+  height: 100%;
+}
+.hiddenID {
   display: none;
 }
 
 .titleCard{
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hiddenDiv{
   display: none;
-  margin: 50px;
+  min-height: 300px;
+  position: relative;
+}
+.nextStart, .nextTwo {
+  display: flex;
+  margin: auto;
+}
+.combat {
+  position: relative;
+  bottom: 285px;
+}
+.combat .enemy-text {
+  padding: 0;
+}
+.combat .col-md {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .form-control {
   background-color: transparent;
@@ -99,24 +141,33 @@ p {
 .form-control:focus {
   background: transparent;
   box-shadow: none;
+  color: white;
 }
 #classTitle {
   text-transform: capitalize;
 }
-#start {
+.char-select-form {
+  display: none;
+}
+.char-select-form .form-group {
+  margin: 0;
+  margin-top: 20px;
+}
+.char-select-form button[type="submit"] {
+  margin-top: 40px;
+}
+.start {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
+.choiceStart button {
+  display: flex;
+  margin: auto;
+}
 .form-group {
   width: 100%;
-}
-button{
-  margin-right: 50%;
-  margin-left: 50%;
-
 }
 label{
   color: #F8F8FF;
@@ -124,7 +175,7 @@ label{
 .userStats{
   display: none;
   border: 4px solid #F8F8FF;
-  margin: 100px;
+  margin: 0 50px;
   padding: 10px;
   font-size: 12px;
 }

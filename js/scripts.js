@@ -19,6 +19,11 @@ var hpZero = ['', 'Darkness overtakes your eyes.', 'The pain has become unbearab
 
 //front end
 $(document).ready(function(){
+  $("button#enterButton").click(function() {
+    $("form.char-select-form").fadeIn(3300);
+    $(".logo").fadeOut();
+    $(this).fadeOut();
+  });
   $("#start").submit(function(event) {
     var inputName = $("#name").val();
     var player = new User(inputName);
@@ -135,6 +140,7 @@ $(document).ready(function(){
   // room two (combat Room)
   var indexTwo = 0;
   $(".nextTwo").click(function() {
+    // $(".roomTwo").hide();
     indexTwo +=1;
     $("#textTwo").text(roomTwoNarr[indexTwo]);
     if(indexTwo === 5) {
