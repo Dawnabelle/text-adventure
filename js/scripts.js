@@ -44,6 +44,9 @@ $(document).ready(function(){
         $("#attack").hide();
         $(".afterFight").show();
       }
+      if (player.hp <=0){
+        $(".deathZeroHp").fadeIn("slow");
+      }
     });
     if(classInput === "warrior") {
       var warrior = new Warrior();
@@ -193,6 +196,9 @@ $(document).ready(function(){
       $(".combat2-text").text('You obliterated the slime!');
       $(".enemy2-text").hide();
       $("#attack2").hide();
+    }
+    if (player.hp <=0){
+      $(".deathZeroHp").fadeIn("slow");
     }
   });
   });
