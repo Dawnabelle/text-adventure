@@ -15,15 +15,16 @@ $(document).ready(function(){
   $("#start").submit(function(event) {
     var inputName = $("#name").val();
     var player = new User(inputName);
-    var enemy = new Enemy();
+    var skeletor = new Enemy("Skeletor");
+    var slimeguy = new Enemy("Slimeguy");
     var classInput = $("#classSelect").val();
     event.preventDefault();
     $("#attack").click(function() {
       $("#textTwo").hide();
       $("#userHP").text(player.hp)
       $(".combat-text").show();
-      enemy.userAttack();
-      if ((enemy.enemyRoll[enemy.enemyRoll.length-1]) === 20) {
+      skeletor.userAttack();
+      if ((skeletor.enemyRoll[skeletor.enemyRoll.length-1]) === 20) {
         $(".combat-text").text("The enemy dodged your attack");
       } else {
         $(".combat-text").text(strikeText[Math.floor(Math.random()*strikeText.length)]);
@@ -36,7 +37,7 @@ $(document).ready(function(){
       } else {
         $(".enemy-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
       }
-      if (enemy.hp <= 0) {
+      if (skeletor.hp <= 0) {
         $(".combat-text").text('You hit the skeleton with so much force, it cascades boney shards in every direction.');
         $(".enemy-text").hide();
         $("#attack").hide();
@@ -47,27 +48,22 @@ $(document).ready(function(){
       var warrior = new Warrior();
       player.hp = warrior.health;
       player.damage = warrior.damage;
-      enemy.damage = player.damage;
+      skeletor.damage = player.damage;
+      slimeguy.damage = player.damage;
     } else if (classInput === "wizard") {
       var wizard = new Wizard();
-      debugger;
       player.hp = wizard.health;
       player.damage = wizard.damage;
-      enemy.damage = player.damage;
+      skeletor.damage = player.damage;
+      slimeguy.damage = player.damage;
     } else {
       var thief = new Thief();
       player.hp = thief.health;
       player.damage = thief.damage;
-      enemy.damage = player.damage;
+      skeletor.damage = player.damage;
+      slimeguy.damage = player.damage;
     };
-    console.log(enemy);
-    console.log(player);
-    $("#special").click(function() {
-      enemy.special();
-      console.log(enemy);
-      $("#special").hide();
-      player.special = 0;
-    });
+
     $("#userName").text(inputName);
     $("#classTitle").text(classInput);
     $("#userHP").text(player.hp)
@@ -75,7 +71,7 @@ $(document).ready(function(){
     $(".roomStart").slideDown();
     $(".userStats").slideDown();
 
-  });
+
 //start room
   var indexStart = 0;
   $(".nextStart").click(function(event){
@@ -169,8 +165,9 @@ $(document).ready(function(){
   // combat 2
   $("#attack2").click(function(event) {
     $(".combat2-text").show();
-    enemy.userAttack();
-    if ((enemy.enemyRoll[enemy.enemyRoll.length-1]) === 20) {
+    $("#userHP").text(player.hp)
+    slimeguy.userAttack();
+    if ((slimeguy.enemyRoll[slimeguy.enemyRoll.length-1]) === 20) {
       $(".combat2-text").text("The enemy dodged your attack!")
     } else {
       $(".combat2-text").text(strikeText[Math.floor(Math.random()*strikeText.length)]);
@@ -183,6 +180,11 @@ $(document).ready(function(){
     } else {
       $(".enemy2-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
     }
-
+    if (slimeguy.hp <= 0) {
+      $(".combat2-text").text('You obliterated the slime!');
+      $(".enemy2-text").hide();
+      $("#attack2").hide();
+    }
+  });
   });
 });
