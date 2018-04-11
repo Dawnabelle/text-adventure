@@ -17,7 +17,7 @@ var roomFiveNarr = ['',  'Water slowly cascades down the wall on your right and 
 
 var hpZero = ['', 'Darkness overtakes your eyes.', 'The pain has become unbearable.', 'You move to swing, but you have no control of your arms.', 'In fact you no longer have arms, nor a body.', 'You’ve become a spirit, floating through the halls of the cavern until the end of days.']
 
-var roomSixNarr = ['', 'This must be the exit you’ve been searching for.', 'As you tip-toe into the darkness, the ground begins to tremble below you.', 'With a lurch, the floor recedes and you tumble into the abyss.', 'After god-knows how long you awaken to a pungent odor.', 'You try to stand but your legs have broken in the fall.', 'You roll onto your back expecting a slow death but a pair of red eyes meet your gaze...']
+var roomSixNarr = ['', 'This must be the exit you’ve been searching for.', 'As you tip-toe into the darkness, the ground begins to tremble below you.', 'With a lurch, the floor recedes and you tumble into the abyss.', 'After god-knows how long you awaken to a pungent odor.', 'You try to stand but your legs have broken in the fall.', 'You roll onto your back expecting a slow death but a pair of red eyes meet your gaze.', 'To be continued...']
 
 //front end
 $(document).ready(function(){
@@ -253,7 +253,8 @@ $(document).ready(function(){
     $("#roomFiveText").text(roomFiveNarr[indexFive]);
     if(indexFive === 5) {
       $(".nextFive").hide();
-      $(".credits").show();
+      $(".credits").slideDown();
+      $(".userStats").hide();
     }
   })
 
@@ -267,9 +268,10 @@ $(document).ready(function(){
   $(".nextSix").click(function() {
     indexSix +=1;
     $("#roomSixText").text(roomSixNarr[indexSix]);
-    if(indexSix === 6) {
+    if(indexSix === 7) {
       $(".nextSix").hide();
-      
+      $(".credits").slideDown();
+      $(".userStats").hide();
     }
   });
   });
