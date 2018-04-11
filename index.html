@@ -18,14 +18,15 @@
     <div class="titleCard">
       <h1>Cavern</h1>
       <h2> A Text-Based Adventure</h2>
-      <img src="img/logo.png" alt="white outline of a cave">
-      <form id="start">
+      <img class="logo" src="img/logo.png" alt="white outline of a cave">
+      <button type="button" class="btn btn-light" id="enterButton">Enter</button>
+      <form id="start" class="char-select-form">
         <div class="form-group row">
-          <div class="col mr-3">
-            <input type="text" id="name" class="form-control" placeholder="Enter your name:" required>
+          <div class="col">
+            <input type="text" id="name" class="form-control px-0" placeholder="Enter your name:" required>
           </div>
           <div class="col">
-            <select class="form-control" id="classSelect" required>
+            <select class="form-control px-0" id="classSelect" required>
               <option value="" disabled selected>Select a class:</option>
               <option value="warrior">Warrior</option>
               <option value="wizard">Wizard</option>
@@ -33,7 +34,7 @@
             </select>
           </div>
         </div>
-        <button type="submit" class="btn btn-light">Enter</button>
+        <button type="submit" class="btn btn-light mt-3">Start</button>
       </form>
     </div>
     <div class="container">
@@ -46,10 +47,10 @@
           <div class="choiceStart hiddenDiv">
             <div class="row">
               <div class="col">
-                <button type="button" class="btn btn-light" id="leftStart">Go left</button>
+                <button type="button" class="btn btn-light m-auto" id="leftStart">Go left</button>
               </div>
               <div class="col">
-                <button type="button" class="btn btn-light" id="rightStart">Go right</button>
+                <button type="button" class="btn btn-light m-auto" id="rightStart">Go right</button>
               </div>
             </div>
           </div>

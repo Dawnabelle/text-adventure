@@ -1,12 +1,9 @@
-/*#special {
-  display: none;
-}*/
-
 .afterFight{
   display: none;
 }
 form{
   max-width: 500px;
+  width: 100%;
   margin: auto;
 }
 .turn-back {
@@ -55,24 +52,33 @@ p {
 }
 
 .titleCard{
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   padding: 50px;
   width: 100%;
   text-align: center;
 }
-.hiddenID{
+
+.hiddenID {
   display: none;
 }
 
 .titleCard{
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hiddenDiv{
   display: none;
-  margin: 50px;
+  margin: 100px;
+  height: 300px;
+  position: relative;
+}
+.nextStart {
+  display: flex;
+  margin: auto;
 }
 .form-control {
   background-color: transparent;
@@ -84,24 +90,33 @@ p {
 .form-control:focus {
   background: transparent;
   box-shadow: none;
+  color: white;
 }
 #classTitle {
   text-transform: capitalize;
 }
-#start {
+.char-select-form {
+  display: none;
+}
+.char-select-form .form-group {
+  margin: 0;
+  margin-top: 20px;
+}
+.char-select-form button[type="submit"] {
+  margin-top: 40px;
+}
+.start {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
+.choiceStart button {
+  display: flex;
+  margin: auto;
+}
 .form-group {
   width: 100%;
-}
-button{
-  margin-right: 50%;
-  margin-left: 50%;
-
 }
 label{
   color: #F8F8FF;

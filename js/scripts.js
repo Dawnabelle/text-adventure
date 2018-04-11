@@ -13,6 +13,11 @@ var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh bloo
 var hpZero = ['', 'Darkness overtakes your eyes.', 'The pain has become unbearable.', 'You move to swing, but you have no control of your arms.', 'In fact you no longer have arms, nor a body.', 'You’ve become a spirit, floating through the halls of the cavern until the end of days.']
 //front end
 $(document).ready(function(){
+  $("button#enterButton").click(function() {
+    $("form.char-select-form").fadeIn(3300);
+    $(".logo").fadeOut();
+    $(this).fadeOut();
+  });
   $("#start").submit(function(event) {
     var inputName = $("#name").val();
     var player = new User(inputName);
