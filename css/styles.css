@@ -100,10 +100,8 @@ p {
   bottom: 0;
 }
 .dialogue .hiddenDiv #attack {
-  top: 20px;
   left: 0;
   z-index: 2;
-  bottom: initial;
 }
 .choiceStart .row {
   height: 100%;
@@ -139,15 +137,24 @@ p {
 .combat {
   position: relative;
   bottom: 285px;
+  clea
+}
+.combat .combat-text {
+  clear: both;
 }
 .combat .enemy-text {
   padding: 0;
+}
+.combat img {
+  /* height: 100%; */
+  float: right;
 }
 .combat .col-md {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  max-height: 100px;
 }
 .form-control {
   background-color: transparent;
