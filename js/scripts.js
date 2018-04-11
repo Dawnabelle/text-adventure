@@ -75,8 +75,7 @@ $(document).ready(function(){
 
 //start room
   var indexStart = 0;
-  $(".nextStart").click(function(event){
-    event.preventDefault();
+  $(".nextStart").click(function(){
     indexStart +=1;
     $("#textStart").text(roomStartNarr[indexStart]);
     if(indexStart === 4){
@@ -86,14 +85,13 @@ $(document).ready(function(){
   });
 //make sure next buttons are in the last line of the arrays
 //Go left choice
-  $("#leftStart").click(function(event){
+  $("#leftStart").click(function(){
     $(".choiceStart").hide();
     $(".roomOne").show();
   })
 //room one
   var indexOne = 0;
-  $(".nextOne").click(function(event){
-    event.preventDefault();
+  $(".nextOne").click(function(){
     indexOne +=1;
     $("#textOne").text(roomOneNarr[indexOne]);
     if(indexOne === 3){
@@ -114,21 +112,19 @@ $(document).ready(function(){
     $(".mushroom").hide();
   });
 
-  $(".turn-back").click(function(event) {
-    event.preventDefault();
+  $(".turn-back").click(function() {
     $(".choiceStart").show();
     $("#leftStart").hide();
     $(".turn-back").hide();
   });
   // Go right choice
-  $("#rightStart").click(function(event) {
-    event.preventDefault();
+  $("#rightStart").click(function() {
     $(".choiceStart").hide();
     $(".roomTwo").show();
   });
   // room two (combat Room)
   var indexTwo = 0;
-  $(".nextTwo").click(function(event) {
+  $(".nextTwo").click(function() {
     indexTwo +=1;
     $("#textTwo").text(roomTwoNarr[indexTwo]);
     if(indexTwo === 5) {
@@ -139,7 +135,7 @@ $(document).ready(function(){
   });
   //after fight before room 3
   var indexAfterTwoFight = 0;
-  $(".afterFight").click(function(event) {
+  $(".afterFight").click(function() {
     $(".combat-text").hide();
     indexAfterTwoFight +=1;
     $("#afterFightText").text(roomTwoAfterFight[indexAfterTwoFight]);
@@ -151,8 +147,7 @@ $(document).ready(function(){
   });
   //room three
   var indexThree = 0;
-  $(".nextThree").click(function(event){
-    event.preventDefault();
+  $(".nextThree").click(function(){
     $("#afterFightText").hide()
     indexThree +=1;
     $("#textThree").text(roomThreeNarr[indexThree]);
@@ -166,7 +161,7 @@ $(document).ready(function(){
   });
   // room four
   var indexFour = 0;
-  $(".nextFour").click(function(event) {
+  $(".nextFour").click(function() {
     $("#textThree").hide();
     indexFour +=1;
     $("#textFour").text(roomFourNarr[indexFour]);
@@ -176,7 +171,7 @@ $(document).ready(function(){
     }
   });
   // combat 2
-  $("#attack2").click(function(event) {
+  $("#attack2").click(function() {
     $(".combat2-text").show();
     $("#textFour").hide();
     $("#userHP").text(player.hp)
