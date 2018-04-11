@@ -1,6 +1,6 @@
 # Cavern: A Text Adventure
 
-#### Team week 1 project for epicodus 4/09/18
+#### Team week 1 project for Epicodus 4/09/18
 
 ## By Bobby, Dawn, Ami, Garnett, Isaac
 
@@ -18,7 +18,7 @@ A neat text adventure game about navigating through a through a dank cavern
 * The program will use User damage to set Enemy damage
   * **Input: _Enemy-damage = User-damage_**
   * **Output: _Enemy damage = 8_**
-* The program will use 
+* The program will use
 # Setup Requirements
 
 * clone this repository
