@@ -5,11 +5,11 @@ var dodgeText = ['With the grace of a ferret, you dart behind a narrow chasm and
 var enemyStrikeText = ['With stunning force, the enemy lunges and hits you with all of its might.', 'The enemy bludgeons you with its spiky club.', 'Your enemy swings a giant club your way, connecting with your shoulder and sending waves of shock through your body.', 'You kick at the skeleton and miss. It throws you against the wall with it’s boney arms. ', 'The enemy claws you with its dirty, stinky talons.','The enemy’s forceful blow knocks the breath right out of your lungs. Gasping, you roll out of the way before it hits you again.', 'The enemy kicks you in the knee and laughs as you fall to the floor.'
 ]
 var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
-var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
+var roomOneNarr = ['', 'Lying on your belly, you begin a scramble into an equally small room.', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
 var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you.','Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
 var roomTwoAfterFight = ['', 'You rest a minute and try to collect your feelings.', 'What just happened?', 'The scattered bones move no more.', 'Sensing no other immediate threat, you proceed.']
 var roomThreeNarr = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.', 'There are no enemies in this room, save the path itself.', 'A rickety bridge is in front of you and is the only way across.', 'You step out with your right foot and the bridge begins to sway.', 'Anxiously, you press on.']
-var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Do you stay and fight?']
+var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Prepare for another battle!']
 //front end
 $(document).ready(function(){
   $("#start").submit(function(event) {
@@ -98,8 +98,21 @@ $(document).ready(function(){
     if(indexOne === 3){
       $(".roomOne").hide();
       $(".turn-back").show();
+      $(".mushroom").show();
     }
   });
+  $(".mushroom").click(function(event) {
+    var roll = Math.floor(Math.random() * (21-1) + 1);
+    console.log(roll);
+    if (roll > 10) {
+      player.hp += 15
+    } else {
+      player.hp -= 15
+    }
+    $("#userHP").text(player.hp);
+    $(".mushroom").hide();
+  });
+
   $(".turn-back").click(function(event) {
     event.preventDefault();
     $(".choiceStart").show();
@@ -158,13 +171,13 @@ $(document).ready(function(){
     $("#textFour").text(roomFourNarr[indexFour]);
     if(indexFour === 3) {
       $(".nextFour").hide();
-      $("#textFour").hide();
       $(".combat2").show();
     }
   });
   // combat 2
   $("#attack2").click(function(event) {
     $(".combat2-text").show();
+    $("#textFour").hide();
     $("#userHP").text(player.hp)
     slimeguy.userAttack();
     if ((slimeguy.enemyRoll[slimeguy.enemyRoll.length-1]) === 20) {
