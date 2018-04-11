@@ -11,7 +11,9 @@ var roomTwoAfterFight = ['', 'You rest a minute and try to collect your feelings
 var roomThreeNarr = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.', 'There are no enemies in this room, save the path itself.', 'A rickety bridge is in front of you and is the only way across.', 'You step out with your right foot and the bridge begins to sway.', 'Anxiously, you press on.']
 var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Prepare for another battle!']
 
-var roomFourAfterFight = ['', 'Covered in sweat, blood, and enemy entrails, you stand victorious over the chunky, gooey body of your foe.', 'Leaning against a mid size boulder and reflect over all you’ve been through in your travels.', 'You’ve killed, you’ve mamed, and all you have to show for it are a bunch of cuts, bruises, and a metallic taste in your mouth.', 'You wipe the gook out of your eyes and bravely step forward.']
+var roomFourAfterFight = ['', 'Covered in sweat, blood, and enemy entrails, you stand victorious over the chunky, gooey body of your foe.', 'Leaning against a mid size boulder and reflect over all you’ve been through in your travels.', 'You’ve killed, you’ve mamed, and all you have to show for it are a bunch of cuts, bruises, and a metallic taste in your mouth.', 'You wipe the gook out of your eyes and bravely step forward.', 'You turn to your left and notice a crack in the far wall, just big enough to squeeze through if you hold your breath.', 'You look around and notice two paths: one on your left and one on your right.', 'Do you squeeze through the crack, or head through the larger opening?']
+
+var roomFiveNarr = ['', 'You find yourself in an empty cavernous room, with a ceiling so far above, you can’t see it. A gentle light floats down from the invisible heights above, casting deep shadows into the far corners.', 'At first, there seems to be only one opening at the far end of the room.', 'As you walk towards the opening in the rock wall, a quick flash of light catches your eye.']
 
 var hpZero = ['', 'Darkness overtakes your eyes.', 'The pain has become unbearable.', 'You move to swing, but you have no control of your arms.', 'In fact you no longer have arms, nor a body.', 'You’ve become a spirit, floating through the halls of the cavern until the end of days.']
 
@@ -198,11 +200,14 @@ $(document).ready(function(){
       $(".enemy2-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
     }
     if (slimeguy.hp <= 0) {
-      $(".combat2-text").text('You obliterated the slime!');
+      $(".combat2-text").hide();
       $(".enemy2-text").hide();
       $("#attack2").hide();
       $(".afterFight2").show();
       $("#enemy2").fadeOut("slow");
+    }
+    if (player.hp <=0){
+      $(".deathZeroHp").fadeIn("slow");
     }
     if (player.hp <=0){
       $(".deathZeroHp").fadeIn("slow");
@@ -212,14 +217,29 @@ $(document).ready(function(){
   // room four after fight
   var indexAfterFourFight = 0;
   $(".afterFight2Next").click(function(event){
-    $(".combat2-text").hide();
     indexAfterFourFight +=1;
     $("#afterFightText2").text(roomFourAfterFight[indexAfterFourFight]);
-    if (indexAfterFourFight === 5) {
+    if (indexAfterFourFight === 8) {
       $(".afterFight2").hide();
-      // $("").show();
+      $(".afterFight2Next").hide();
+      $(".choiceSqueeze").show();
     }
-
   });
+
+  var indexFive = 0;
+  $(".emptyRoomNext").click(function(){
+    $("#afterFightText2").hide();
+    indexFive +=1;
+    $("roomFiveText").text(roomFiveNarr[indexFive]);
+    if(indexFive === 7) {
+      $("#emptyRoomNarr").hide();
+    }
+  })
+
+  var indexSix = 0;
+  $("").click(function(){
+    $("").hide();
+    $("").show();
+  })
   });
 });
