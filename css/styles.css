@@ -50,7 +50,9 @@ p {
   font-family: "Press Start 2P", sans-serif;
   color: #F8F8FF;
 }
-
+.container {
+  padding-top: 100px;
+}
 .titleCard{
   margin-right: auto;
   margin-left: auto;
@@ -72,13 +74,22 @@ p {
 }
 .hiddenDiv{
   display: none;
-  margin: 100px;
+  /* margin: 100px; */
   height: 300px;
   position: relative;
 }
-.nextStart {
+.nextStart, .nextTwo {
   display: flex;
   margin: auto;
+}
+.combat {
+  position: relative;
+  bottom: 285px;
+}
+.combat .col-md {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .form-control {
   background-color: transparent;
@@ -124,7 +135,7 @@ label{
 .userStats{
   display: none;
   border: 4px solid #F8F8FF;
-  margin: 100px;
+  margin: 0 50px;
   padding: 10px;
   font-size: 12px;
 }

@@ -130,6 +130,7 @@ $(document).ready(function(){
   // room two (combat Room)
   var indexTwo = 0;
   $(".nextTwo").click(function() {
+    // $(".roomTwo").hide();
     indexTwo +=1;
     $("#textTwo").text(roomTwoNarr[indexTwo]);
     if(indexTwo === 5) {
