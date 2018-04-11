@@ -23,9 +23,13 @@ var roomSixNarr = ['', 'This must be the exit you’ve been searching for.', 'As
 $(document).ready(function(){
   $("button#enterButton").click(function() {
     $("form.char-select-form").fadeIn(3300);
+    $("button#helpMe").fadeIn(3300)
     $(".logo").fadeOut();
     $(this).fadeOut();
   });
+  $("button#helpMe").click(function(){
+    $(".theCavalry").fadeIn(3300);
+  })
   $("#start").submit(function(event) {
     var inputName = $("#name").val();
     var player = new User(inputName);

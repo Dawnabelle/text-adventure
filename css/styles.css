@@ -26,6 +26,9 @@ form{
   max-width: 100%;
 
 }
+#helpMe{
+  display: none;
+}
 .turn-back {
   display: none;
   padding: 50px;
@@ -182,4 +185,8 @@ label{
   margin: 0 50px;
   padding: 10px;
   font-size: 12px;
+}
+.theCavalry{
+  font-family: "Poiret One",sans-serif;
+  margin-top: 100px;
 }
