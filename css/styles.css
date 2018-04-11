@@ -24,6 +24,9 @@ form{
   max-width: 500px;
   margin: auto;
 }
+/*#shroomin{
+  display: none;
+}*/
 .turn-back {
   display: none;
   padding: 50px;
