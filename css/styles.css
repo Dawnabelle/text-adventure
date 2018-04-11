@@ -28,7 +28,9 @@ form{
 }
 #helpMe{
   display: none;
+  margin-top: 5px;
 }
+
 .turn-back {
   display: none;
   padding: 50px;
@@ -120,6 +122,12 @@ p {
   display: none;
   min-height: 300px;
   position: relative;
+}
+#rightStart {
+  float: left;
+}
+#leftStart {
+  float: right;
 }
 .nextStart, .nextTwo {
   display: flex;
