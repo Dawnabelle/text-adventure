@@ -36,6 +36,13 @@
         </div>
         <button type="submit" class="btn btn-light mt-3">Start</button>
       </form>
+      <button type="button" class="btn btn-light" id="helpMe">Help</button>
+      <div class="theCavalry hiddenDiv">
+        <h4>In this game, the class you choose will affect your combat and fortitude.</h4>
+        <h4>Warrior - a sturdy, strapping character who can take a hit but isn't the fastest or most accurate aggressor</h4>
+        <h4>Wizard - a brilliant, studious character who can exploit weaknesses but has little defense if the fight is up close and personal</h4>
+        <h4>Thief - a deft and quick-witted character who is acquainted with danger but not impervious</h4>
+      </div>
     </div>
     <div class="container">
       <div class="row">
@@ -50,6 +57,7 @@
                 <button type="button" class="btn btn-light m-auto" id="leftStart">Go left</button>
               </div>
               <div class="col">
+                <p id="shroomEat"></p>
                 <button type="button" class="btn btn-light m-auto" id="rightStart">Go right</button>
               </div>
             </div>
@@ -108,8 +116,12 @@
             </div>
           </div>
           <div class="roomFive hiddenDiv">
-            <p id="roomFiveText"></p>
-            <button type="button" class="nextFour btn btn-light"> >>> </button>
+            <p id="roomFiveText">The slot was much more narrow than you anticipated and you pause for a deep breath as your body escapes into the room beyond.</p>
+            <button type="button" class="nextFive btn btn-light"> >>> </button>
+          </div>
+          <div class="roomSix hiddenDiv">
+            <p id="roomSixText">As you enter the gaping maw of the cracked stone, you feel a touch of cool wind caress your cheek.</p>
+            <button type="button" class="nextSix btn btn-light"> >>> </button>
           </div>
         </div>
         <div class="col col-md-5">
