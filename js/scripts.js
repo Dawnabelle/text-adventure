@@ -281,7 +281,6 @@ $(document).ready(function(){
     $("#roomSixText").text(roomSixNarr[indexSix]);
     if(indexSix === 7) {
       $(".nextSix").hide();
-
       $(".credits").slideDown();
       $(".userStats").hide();
 
