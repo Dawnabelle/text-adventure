@@ -11,7 +11,7 @@ var roomTwoAfterFight = ['', 'You rest a minute and try to collect your feelings
 var roomThreeNarr = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.', 'There are no enemies in this room, save the path itself.', 'A rickety bridge is in front of you and is the only way across.', 'You step out with your right foot and the bridge begins to sway.', 'Anxiously, you press on.']
 var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Prepare for another battle!']
 
-var roomFourAfterFight = ['', 'Covered in sweat, blood, and enemy entrails, you stand victorious over the chunky, gooey body of your foe.', 'Leaning against a mid size boulder and reflect over all you’ve been through in your travels.', 'You’ve killed, you’ve mamed, and all you have to show for it are a bunch of cuts, bruises, and a metallic taste in your mouth.', 'You wipe the gook out of your eyes and bravely step forward.', 'You turn to your left and notice a crack in the far wall, just big enough to squeeze through if you hold your breath.', 'You look around and notice two paths: one on your left and one on your right.', 'Do you squeeze through the crack, or head through the larger opening?']
+var roomFourAfterFight = ['', 'Covered in sweat, blood, and enemy entrails, you stand victorious over the chunky, gooey body of your foe.', 'Leaning against a mid size boulder and reflect over all you’ve been through in your travels.', 'You’ve killed, you’ve maimed, and all you have to show for it are a bunch of cuts, bruises, and a metallic taste in your mouth.', 'You wipe the gook out of your eyes and bravely step forward.', 'You turn to your left and notice a crack in the far wall, just big enough to squeeze through if you hold your breath.', 'You look around and notice two paths: one on your left and one on your right.', 'Do you squeeze through the crack, or head through the larger opening?']
 
 var roomFiveNarr = ['',  'Water slowly cascades down the wall on your right and you move closer towards the sound.', 'The water falls into a small pool, and beyond your reflection, you see a glass vial.', 'Reaching into the cool water, you grasp the vial in your hand.', 'Drinking the potion contained inside, you wake up at twilight in a familiar, friendly field.', 'A new adventure awaits.']
 
@@ -269,7 +269,7 @@ $(document).ready(function(){
     $("#roomSixText").text(roomSixNarr[indexSix]);
     if(indexSix === 6) {
       $(".nextSix").hide();
-      
+
     }
   });
   });
