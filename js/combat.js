@@ -6,8 +6,8 @@ function User(name) {
   this.special = 0;
   this.combatRoll = [];
 }
-function Enemy() {
-  this.name = "Sparky";
+function Enemy(name) {
+  this.name = name;
   this.hp = 25;
   this.damage = 0;
   this.enemyRoll = [];
