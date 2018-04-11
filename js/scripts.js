@@ -281,12 +281,8 @@ $(document).ready(function(){
     $("#roomSixText").text(roomSixNarr[indexSix]);
     if(indexSix === 7) {
       $(".nextSix").hide();
-<<<<<<< HEAD
-
-=======
       $(".credits").slideDown();
       $(".userStats").hide();
->>>>>>> f2e870d85ba8e1d9ad45a7c85bbdb75429404cbf
     }
   });
   });
