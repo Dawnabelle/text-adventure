@@ -120,9 +120,12 @@ $(document).ready(function(){
     console.log(roll);
     if (roll > 10) {
       player.hp += 15
+      $("#shroomEat").text("You ate the mushroom and it was delicious! + 15 health")
     } else {
       player.hp -= 15
+      $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. - 15 health")
     }
+    $("#shroomEat").append('<img src="img/shroomin.gif" alt="psychaeldic colors swirling">')
     $("#userHP").text(player.hp);
     $(".mushroom").hide();
   });
@@ -135,6 +138,7 @@ $(document).ready(function(){
   // Go right choice
   $("#rightStart").click(function() {
     $(".choiceStart").hide();
+    $("#shroomEat").hide();
     $(".roomTwo").show();
   });
   // room two (combat Room)
