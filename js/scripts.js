@@ -125,7 +125,7 @@ $(document).ready(function(){
       player.hp -= 15
       $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. - 15 health")
     }
-    $("#shroomEat").append('<img src="img/shroomin.gif" alt="psychaeldic colors swirling">')
+    $("#shroomEat").prepend('<img src="img/shroomin.gif" alt="psychaeldic colors swirling" id="shroomPic"><p>')
     $("#userHP").text(player.hp);
     $(".mushroom").hide();
   });
