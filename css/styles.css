@@ -39,6 +39,7 @@ img{
   margin: 25px;
 }
 html {
+  min-height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -47,7 +48,7 @@ html {
   text-align: center;
 }
 body {
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(#000 0%, #333 100%);
   color: white;
 }
@@ -120,6 +121,14 @@ p {
   display: none;
   min-height: 300px;
   position: relative;
+}
+.hurt {
+  animation: pulse 1s;
+}
+@keyframes pulse {
+  0% {color: white;}
+  50% {color: tomato;}
+  100% {color: white;}
 }
 .nextStart, .nextTwo {
   display: flex;
