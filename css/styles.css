@@ -28,7 +28,9 @@ form{
 }
 #helpMe{
   display: none;
+  margin-top: 5px;
 }
+
 .turn-back {
   display: none;
   padding: 50px;
