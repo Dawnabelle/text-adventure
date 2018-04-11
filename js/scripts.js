@@ -285,7 +285,6 @@ $(document).ready(function(){
       $(".nextSix").hide();
       $(".credits").slideDown();
       $(".userStats").hide();
-
     }
   });
   });

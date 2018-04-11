@@ -7,16 +7,12 @@
   width: 100vw;
   display: none;
   background: linear-gradient(#000 0%, #333 100%);
-  /*background-image: url(../img/cave-death.png);*/
   text-align:center;
   font-size: 200px;
 }
 .afterFight{
   display: none;
 }
-/*.afterFight2 {
-  display: none;
-}*/
 form{
   max-width: 500px;
   width: 100%;
