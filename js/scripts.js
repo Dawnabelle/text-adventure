@@ -21,9 +21,13 @@ var hpZero = ['', 'Darkness overtakes your eyes.', 'The pain has become unbearab
 $(document).ready(function(){
   $("button#enterButton").click(function() {
     $("form.char-select-form").fadeIn(3300);
+    $("button#helpMe").fadeIn(3300)
     $(".logo").fadeOut();
     $(this).fadeOut();
   });
+  $("button#helpMe").click(function(){
+    $(".theCavalry").fadeIn(3300);
+  })
   $("#start").submit(function(event) {
     var inputName = $("#name").val();
     var player = new User(inputName);
