@@ -33,6 +33,9 @@ form{
   bottom: 20px;
   right: 20px;
 }
+.choiceSqueeze .row {
+  height: 100%;
+}
 .shroomin-bg {
   background: url('../img/shroomin.gif');
   background-size: cover;
