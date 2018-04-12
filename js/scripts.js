@@ -132,7 +132,6 @@ $(document).ready(function(){
     });
     $(".mushroom").click(function(event) {
       var roll = Math.floor(Math.random() * (21-1) + 1);
-      console.log(roll);
       if (roll > 10) {
         player.hp += 15
         $("#shroomEat").text("You ate the mushroom and it was delicious! + 15 health")
@@ -211,7 +210,6 @@ $(document).ready(function(){
     $("#attack2").click(function() {
       $(".combat2-text").show();
       $("#textFour").hide();
-      $("#userHP").text(player.hp)
       slimeguy.userAttack();
       if ((slimeguy.enemyRoll[slimeguy.enemyRoll.length-1]) === 20) {
         $(".combat2-text").text("The enemy dodged your attack!")
@@ -226,6 +224,7 @@ $(document).ready(function(){
       } else {
         $(".enemy2-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
       }
+      $("#userHP").text(player.hp)
       if (slimeguy.hp <= 0) {
         $(".combat2-text").hide();
         $(".enemy2-text").hide();
@@ -234,9 +233,6 @@ $(document).ready(function(){
         $("#enemy2").fadeOut("slow");
       }
       hpPulse();
-      if (player.hp <=0){
-        $(".deathZeroHp").fadeIn("slow");
-      }
       if (player.hp <=0){
         $(".deathZeroHp").fadeIn("slow");
       }
