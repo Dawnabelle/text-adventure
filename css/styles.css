@@ -10,6 +10,13 @@
   text-align:center;
   font-size: 200px;
 }
+#hpZeroText{
+  transition: 0.5s;
+  color: white;
+}
+#hpZeroText:hover{
+  color: #FF0000;
+}
 .afterFight{
   display: none;
 }
