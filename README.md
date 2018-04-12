@@ -6,7 +6,7 @@
 
 # Description
 
-A neat text adventure game about navigating through a through a dank cavern.
+A neat text adventure game about navigating through a dank cavern.
 
 # Specifications
 The program asks for user to input name and select class.
