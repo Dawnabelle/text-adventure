@@ -66,9 +66,9 @@ $(document).ready(function(){
       skeletor.damage = player.damage;
       slimeguy.damage = player.damage;
     };
+    $("#userHP").text(player.hp)
     $("#attack").click(function() {
       $("#textTwo").hide();
-      $("#userHP").text(player.hp)
       $(".combat-text").show();
       skeletor.userAttack();
       if ((skeletor.enemyRoll[skeletor.enemyRoll.length-1]) === 20) {
@@ -84,6 +84,7 @@ $(document).ready(function(){
       } else {
         $(".enemy-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
       }
+      $("#userHP").text(player.hp)
       if (skeletor.hp <= 0) {
         $(".combat-text").text('You hit the skeleton with so much force, it cascades boney shards in every direction.');
         $(".enemy-text").hide();
@@ -212,7 +213,6 @@ $(document).ready(function(){
   $("#attack2").click(function() {
     $(".combat2-text").show();
     $("#textFour").hide();
-    $("#userHP").text(player.hp)
     slimeguy.userAttack();
     if ((slimeguy.enemyRoll[slimeguy.enemyRoll.length-1]) === 20) {
       $(".combat2-text").text("The enemy dodged your attack!")
@@ -227,6 +227,7 @@ $(document).ready(function(){
     } else {
       $(".enemy2-text").text(enemyStrikeText[Math.floor(Math.random()*enemyStrikeText.length)]);
     }
+    $("#userHP").text(player.hp)
     if (slimeguy.hp <= 0) {
       $(".combat2-text").hide();
       $(".enemy2-text").hide();
