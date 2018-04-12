@@ -6,7 +6,7 @@ var enemyStrikeText = ['With stunning force, the enemy lunges and hits you with 
 ]
 var roomStartNarr =['','Its damp, earthy smell overtakes your senses.', 'You look around and notice two paths: one on your left and one on your right.', 'Which path will you choose?']
 var roomOneNarr = ['', 'Lying on your belly, you begin dragging yourself into an equally small room.', 'There isn’t anything in here. Just some mushrooms on the ground and some moist moss.']
-var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Some how, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you.','Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
+var roomTwoNarr = ['', 'As your eyes begin to adjust to the low light, you see a human skeleton on the floor.', 'Somehow, some way, the skeleton begins to jostle.', ' It has noticed your appearance in its eternal chamber and has begun stumbling towards you.','Closer and closer it comes, readying its attack.', 'Prepare yourself for a fight!']
 var roomTwoAfterFight = ['', 'You rest a minute and try to collect your feelings.', 'What just happened?', 'The scattered bones move no more.', 'Sensing no other immediate threat, you proceed.']
 var roomThreeNarr = ['', 'Holding your breath, scared and nervous, you progress deeper into the cavern.', 'There are no enemies in this room, save the path itself.', 'A rickety bridge is in front of you and is the only way across.', 'You step out with your right foot and the bridge begins to sway.', 'Anxiously, you press on.']
 var roomFourNarr = ['','A slimy, toothy creature stands in your path, fresh blood drips from its mouth.','With a terrifying roar, your enemy runs towards you.', 'Prepare for another battle!']
@@ -137,10 +137,10 @@ $(document).ready(function(){
     console.log(roll);
     if (roll > 10) {
       player.hp += 15
-      $("#shroomEat").text("You ate the mushroom and it was delicious! + 15 health")
+      $("#shroomEat").text("You ate the mushroom and it was delicious! +15 health")
     } else {
       player.hp -= 15
-      $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. - 15 health")
+      $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. -15 health")
     }
     hpPulse();
     $("body").addClass('shroomin-bg');
@@ -282,7 +282,10 @@ $(document).ready(function(){
   $(".nextSix").click(function() {
     indexSix +=1;
     $("#roomSixText").text(roomSixNarr[indexSix]);
-    if(indexSix === 7) {
+    if(indexSix === 6){
+      $("#badEnding").fadeIn(2200);
+    } else if(indexSix === 7) {
+      $("#badEnding").fadeOut(500);
       $(".nextSix").hide();
       $(".credits").slideDown();
       $(".userStats").hide();
