@@ -261,6 +261,9 @@ $(document).ready(function(){
       indexFive +=1;
       $("#roomFiveText").text(roomFiveNarr[indexFive]);
       if(indexFive === 5) {
+        $("#goodEnding").fadeIn(2200);
+      } else if(indexFive === 6){
+        $("#goodEnding").fadeOut(500);
         $(".nextFive").hide();
         $(".credits").slideDown();
         $(".userStats").hide();
