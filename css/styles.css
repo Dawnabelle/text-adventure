@@ -25,6 +25,9 @@ form{
 #badEnding{
   display: none;
 }
+#goodEnding{
+  display: none;
+}
 #helpMe{
   display: none;
   margin-top: 5px;
