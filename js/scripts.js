@@ -132,7 +132,6 @@ $(document).ready(function(){
     });
     $(".mushroom").click(function(event) {
       var roll = Math.floor(Math.random() * (21-1) + 1);
-      console.log(roll);
       if (roll > 10) {
         player.hp += 15
         $("#shroomEat").text("You ate the mushroom and it was delicious! + 15 health")
@@ -234,9 +233,6 @@ $(document).ready(function(){
         $("#enemy2").fadeOut("slow");
       }
       hpPulse();
-      if (player.hp <=0){
-        $(".deathZeroHp").fadeIn("slow");
-      }
       if (player.hp <=0){
         $(".deathZeroHp").fadeIn("slow");
       }
