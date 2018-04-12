@@ -20,7 +20,6 @@ var roomSixNarr = ['', 'This must be the exit you’ve been searching for.', 'As
 
 //front end
 $(document).ready(function(){
-
   $("button#enterButton").click(function() {
     $("form.char-select-form").fadeIn(3300);
     $("button#helpMe").fadeIn(3300)
@@ -103,189 +102,189 @@ $(document).ready(function(){
     $(".roomStart").slideDown();
     $(".userStats").slideDown();
 
-//start room
-  var indexStart = 0;
-  $(".nextStart").click(function(){
-    indexStart +=1;
-    $("#textStart").text(roomStartNarr[indexStart]);
-    if(indexStart === 4){
-      $(".roomStart").hide();
+    //start room
+    var indexStart = 0;
+    $(".nextStart").click(function(){
+      indexStart +=1;
+      $("#textStart").text(roomStartNarr[indexStart]);
+      if(indexStart === 4){
+        $(".roomStart").hide();
+        $(".choiceStart").show();
+      }
+    });
+    //make sure next buttons are in the last line of the arrays
+    //Go left choice
+    $("#leftStart").click(function(){
+      $(".choiceStart").hide();
+      $(".go-left-button").hide();
+      $(".roomOne").show();
+    })
+    //room one
+    var indexOne = 0;
+    $(".nextOne").click(function(){
+      indexOne +=1;
+      $("#textOne").text(roomOneNarr[indexOne]);
+      if(indexOne === 3){
+        $(".roomOne").hide();
+        $(".turn-back").show();
+        $(".mushroom").show();
+      }
+    });
+    $(".mushroom").click(function(event) {
+      var roll = Math.floor(Math.random() * (21-1) + 1);
+      console.log(roll);
+      if (roll > 10) {
+        player.hp += 15
+        $("#shroomEat").text("You ate the mushroom and it was delicious! + 15 health")
+      } else {
+        player.hp -= 15
+        $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. - 15 health")
+      }
+      hpPulse();
+      $("body").addClass('shroomin-bg');
+      $("#userHP").text(player.hp);
+      $(".mushroom").hide();
+    });
+
+    $(".turn-back").click(function() {
       $(".choiceStart").show();
-    }
-  });
-//make sure next buttons are in the last line of the arrays
-//Go left choice
-  $("#leftStart").click(function(){
-    $(".choiceStart").hide();
-    $(".go-left-button").hide();
-    $(".roomOne").show();
-  })
-//room one
-  var indexOne = 0;
-  $(".nextOne").click(function(){
-    indexOne +=1;
-    $("#textOne").text(roomOneNarr[indexOne]);
-    if(indexOne === 3){
-      $(".roomOne").hide();
-      $(".turn-back").show();
-      $(".mushroom").show();
-    }
-  });
-  $(".mushroom").click(function(event) {
-    var roll = Math.floor(Math.random() * (21-1) + 1);
-    console.log(roll);
-    if (roll > 10) {
-      player.hp += 15
-      $("#shroomEat").text("You ate the mushroom and it was delicious! + 15 health")
-    } else {
-      player.hp -= 15
-      $("#shroomEat").text("You ate the mushroom and feel your stomach start to cramp. - 15 health")
-    }
-    hpPulse();
-    $("body").addClass('shroomin-bg');
-    $("#userHP").text(player.hp);
-    $(".mushroom").hide();
-  });
+      $("#leftStart").hide();
+      $(".turn-back").hide();
+    });
+    // Go right choice
+    $("#rightStart").click(function() {
+      $(".choiceStart").hide();
+      $("#shroomEat").hide();
+      $(".roomTwo").show();
+      $("body").removeClass('shroomin-bg');
+    });
+    // room two (combat Room)
+    var indexTwo = 0;
+    $(".nextTwo").click(function() {
+      // $(".roomTwo").hide();
+      indexTwo +=1;
+      $("#textTwo").text(roomTwoNarr[indexTwo]);
+      if(indexTwo === 5) {
+      $(".nextTwo").hide();
+      $(".combat").show();
+      $(".combat-text").hide();
+      }
+    });
+    //after fight before room 3
+    var indexAfterTwoFight = 0;
+    $(".afterFight").click(function() {
+      $(".combat-text").hide();
+      indexAfterTwoFight +=1;
+      $("#afterFightText").text(roomTwoAfterFight[indexAfterTwoFight]);
+      if (indexAfterTwoFight === 4) {
+        $(".afterFight").hide();
+        $(".roomThree").show();
+        $(".nextThree").show()
+      }
+    });
+    //room three
+    var indexThree = 0;
+    $(".nextThree").click(function(){
+      $("#afterFightText").hide()
+      indexThree +=1;
+      $("#textThree").text(roomThreeNarr[indexThree]);
+      if(indexThree === 6){
+        $(".roomThree").hide();
+        $(".nextThree").hide();
+        $(".roomFour").show();
+        $("#textFour").show();
+        $(".nextFour").show();
+      }
+    });
+    // room four
+    var indexFour = 0;
+    $(".nextFour").click(function() {
+      $("#textThree").hide();
+      indexFour +=1;
+      $("#textFour").text(roomFourNarr[indexFour]);
+      if(indexFour === 3) {
+        $(".nextFour").hide();
+        $(".combat2").show();
+      }
+    });
+    // combat 2
+    $("#attack2").click(function() {
+      $(".combat2-text").show();
+      $("#textFour").hide();
+      slimeguy.userAttack();
+      if ((slimeguy.enemyRoll[slimeguy.enemyRoll.length-1]) === 20) {
+        $(".combat2-text").text("The enemy dodged your attack!")
+      } else {
+        $(".combat2-text").text(strikeText[Math.floor(Math.random()*strikeText.length)]);
+      }
+      player.enemyAttack();
+      if ((player.combatRoll[player.combatRoll.length-1]) >= 19) {
+        $(".enemy2-text").text(dodgeText[Math.floor(Math.random()*dodgeText.length)]);
+      } else if ((player.combatRoll[player.combatRoll.length-1]) >= 17) {
+        $(".enemy2-text").text("You blocked the attack.");
+      } else {
+        $(".enemy2-text").text(enemyStrikeTextBlob[Math.floor(Math.random()*enemyStrikeTextBlob.length)]);
+      }
+      $("#userHP").text(player.hp)
+      if (slimeguy.hp <= 0) {
+        $(".combat2-text").hide();
+        $(".enemy2-text").hide();
+        $("#attack2").hide();
+        $(".afterFight2").show();
+        $("#enemy2").fadeOut("slow");
+      }
+      hpPulse();
+      if (player.hp <=0){
+        $(".deathZeroHp").fadeIn("slow");
+      }
+      if (player.hp <=0){
+        $(".deathZeroHp").fadeIn("slow");
+      }
+    });
 
-  $(".turn-back").click(function() {
-    $(".choiceStart").show();
-    $("#leftStart").hide();
-    $(".turn-back").hide();
-  });
-  // Go right choice
-  $("#rightStart").click(function() {
-    $(".choiceStart").hide();
-    $("#shroomEat").hide();
-    $(".roomTwo").show();
-    $("body").removeClass('shroomin-bg');
-  });
-  // room two (combat Room)
-  var indexTwo = 0;
-  $(".nextTwo").click(function() {
-    // $(".roomTwo").hide();
-    indexTwo +=1;
-    $("#textTwo").text(roomTwoNarr[indexTwo]);
-    if(indexTwo === 5) {
-    $(".nextTwo").hide();
-    $(".combat").show();
-    $(".combat-text").hide();
-    }
-  });
-  //after fight before room 3
-  var indexAfterTwoFight = 0;
-  $(".afterFight").click(function() {
-    $(".combat-text").hide();
-    indexAfterTwoFight +=1;
-    $("#afterFightText").text(roomTwoAfterFight[indexAfterTwoFight]);
-    if (indexAfterTwoFight === 4) {
-      $(".afterFight").hide();
-      $(".roomThree").show();
-      $(".nextThree").show()
-    }
-  });
-  //room three
-  var indexThree = 0;
-  $(".nextThree").click(function(){
-    $("#afterFightText").hide()
-    indexThree +=1;
-    $("#textThree").text(roomThreeNarr[indexThree]);
-    if(indexThree === 6){
-      $(".roomThree").hide();
-      $(".nextThree").hide();
-      $(".roomFour").show();
-      $("#textFour").show();
-      $(".nextFour").show();
-    }
-  });
-  // room four
-  var indexFour = 0;
-  $(".nextFour").click(function() {
-    $("#textThree").hide();
-    indexFour +=1;
-    $("#textFour").text(roomFourNarr[indexFour]);
-    if(indexFour === 3) {
-      $(".nextFour").hide();
-      $(".combat2").show();
-    }
-  });
-  // combat 2
-  $("#attack2").click(function() {
-    $(".combat2-text").show();
-    $("#textFour").hide();
-    slimeguy.userAttack();
-    if ((slimeguy.enemyRoll[slimeguy.enemyRoll.length-1]) === 20) {
-      $(".combat2-text").text("The enemy dodged your attack!")
-    } else {
-      $(".combat2-text").text(strikeText[Math.floor(Math.random()*strikeText.length)]);
-    }
-    player.enemyAttack();
-    if ((player.combatRoll[player.combatRoll.length-1]) >= 19) {
-      $(".enemy2-text").text(dodgeText[Math.floor(Math.random()*dodgeText.length)]);
-    } else if ((player.combatRoll[player.combatRoll.length-1]) >= 17) {
-      $(".enemy2-text").text("You blocked the attack.");
-    } else {
-      $(".enemy2-text").text(enemyStrikeTextBlob[Math.floor(Math.random()*enemyStrikeTextBlob.length)]);
-    }
-    $("#userHP").text(player.hp)
-    if (slimeguy.hp <= 0) {
-      $(".combat2-text").hide();
-      $(".enemy2-text").hide();
-      $("#attack2").hide();
-      $(".afterFight2").show();
-      $("#enemy2").fadeOut("slow");
-    }
-    hpPulse();
-    if (player.hp <=0){
-      $(".deathZeroHp").fadeIn("slow");
-    }
-    if (player.hp <=0){
-      $(".deathZeroHp").fadeIn("slow");
-    }
-  });
+    // room four after fight
+    var indexAfterFourFight = 0;
+    $(".afterFight2Next").click(function(event){
+      indexAfterFourFight +=1;
+      $("#afterFightText2").text(roomFourAfterFight[indexAfterFourFight]);
+      if (indexAfterFourFight === 8) {
+        $(".afterFight2").hide();
+        $(".afterFight2Next").hide();
+        $(".choiceSqueeze").show();
+      }
+    });
+    $(".choiceSqueezeNext").click(function(event) {
+      $(".choiceSqueeze").hide();
+      $(".roomFive").show();
+    });
 
-  // room four after fight
-  var indexAfterFourFight = 0;
-  $(".afterFight2Next").click(function(event){
-    indexAfterFourFight +=1;
-    $("#afterFightText2").text(roomFourAfterFight[indexAfterFourFight]);
-    if (indexAfterFourFight === 8) {
-      $(".afterFight2").hide();
-      $(".afterFight2Next").hide();
-      $(".choiceSqueeze").show();
-    }
-  });
-  $(".choiceSqueezeNext").click(function(event) {
-    $(".choiceSqueeze").hide();
-    $(".roomFive").show();
-  });
+    var indexFive = 0;
+    $(".nextFive").click(function(){
+      $(".choiceSqueeze").hide();
+      indexFive +=1;
+      $("#roomFiveText").text(roomFiveNarr[indexFive]);
+      if(indexFive === 5) {
+        $(".nextFive").hide();
+        $(".credits").slideDown();
+        $(".userStats").hide();
+      }
+    })
 
-  var indexFive = 0;
-  $(".nextFive").click(function(){
-    $(".choiceSqueeze").hide();
-    indexFive +=1;
-    $("#roomFiveText").text(roomFiveNarr[indexFive]);
-    if(indexFive === 5) {
-      $(".nextFive").hide();
-      $(".credits").slideDown();
-      $(".userStats").hide();
-    }
-  })
+    $(".largeOpeningNext").click(function(){
+      $(".roomFive").hide();
+      $(".roomSix").show();
+      $(".choiceSqueeze").hide();
+    });
 
-  $(".largeOpeningNext").click(function(){
-    $(".roomFive").hide();
-    $(".roomSix").show();
-    $(".choiceSqueeze").hide();
-  });
-
-  var indexSix = 0;
-  $(".nextSix").click(function() {
-    indexSix +=1;
-    $("#roomSixText").text(roomSixNarr[indexSix]);
-    if(indexSix === 7) {
-      $(".nextSix").hide();
-      $(".credits").slideDown();
-      $(".userStats").hide();
-    }
-  });
+    var indexSix = 0;
+    $(".nextSix").click(function() {
+      indexSix +=1;
+      $("#roomSixText").text(roomSixNarr[indexSix]);
+      if(indexSix === 7) {
+        $(".nextSix").hide();
+        $(".credits").slideDown();
+        $(".userStats").hide();
+      }
+    });
   });
 });
